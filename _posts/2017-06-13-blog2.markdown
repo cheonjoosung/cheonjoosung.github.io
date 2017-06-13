@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Korean Test"
-date:   2017-06-14 +09:00
+date:   2017-06-13
 categories: my
 highlight: true
 image: https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5idXNpbmVzc25ld3NkYWlseS5jb20vaW1hZ2VzL2kvMDAwLzAwOC85MjMvb3JpZ2luYWwvc3RhcnQuanBn

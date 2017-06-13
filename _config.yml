@@ -6,6 +6,9 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://cheonjoosung.github.io" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
+
+favicon: "favicon.ico"
+
 github_username:  cheonjoosung
 # google_play: 'GDGX'
 # google_plus_com: '109485346959707049693'  # Community link
