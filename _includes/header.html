@@ -2,10 +2,15 @@
 
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">{{ site.title }}</span>
+      <div onclick="location.href='/'">
+        <span class="mdl-layout-title">
+          <i class="material-icons" style="vertical-align: middle;">home</i> {{ site.title }}
+        </span>
+      </div>
+
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      
+
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable is-upgraded">
         <label class="mdl-button mdl-js-button mdl-button--icon" for="js-search__input">
@@ -40,4 +45,3 @@
     </nav>
 
   </div>
-
