@@ -36,3 +36,7 @@ disqus_shortname: 'Joo'
 
 # Build settings
 markdown: kramdown
+
+# For generating sitemaps
+gems:
+  - jekyll-sitemap
