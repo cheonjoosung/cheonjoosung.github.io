@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Android
-permalink: /android/
+title: IOS
+permalink: ios/
 tag: IT
 ---
 
@@ -10,7 +10,7 @@ tag: IT
   {% if site.post_type == 'highlight' %}
 
     {% for post in site.posts %}
-    {% if post.tag == 'android' %}
+    {% if post.tag == 'ios' %}
     {% if post.highlight %}
 
     <div class="section-highlight section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
@@ -69,7 +69,7 @@ tag: IT
   {% else %}
 
     {% for post in site.posts %}
-      {% if post.tag == 'android' %}
+      {% if post.tag == 'ios' %}
     <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--4-col-tablet  mdl-cell--12-col-phone">
       <div class="mdl-card__title" {% if post.image %} style="background: url('{{ post.image }}') center/cover;" {% endif %}>
         <h2 class="mdl-card__title-text">{{ post.title }}</h2>

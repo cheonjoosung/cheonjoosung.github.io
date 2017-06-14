@@ -2,9 +2,10 @@
 layout: post
 title:  "Korean Test"
 date:   2017-06-13
-categories: my
+categories: food
 highlight: true
 image: https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5idXNpbmVzc25ld3NkYWlseS5jb20vaW1hZ2VzL2kvMDAwLzAwOC85MjMvb3JpZ2luYWwvc3RhcnQuanBn
+tag: food
 ---
 
 what r u talking aobut me ? do u know holi day? wow fantastic baby. bomb bomb bomb e vud q vud rkf vud apple banana coffee fian thank u and you
