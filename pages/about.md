@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+tag: MY
 ---
 ###### A Jekyll theme based in Google Material Design Lite library.
 
