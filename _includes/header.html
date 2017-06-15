@@ -49,7 +49,7 @@
           {% if page.title %}
             <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
              · {{ page.title }}
-             <span style="font-size: 3pt; color: rgb(236,90,71);">
+             <span style="font-size: 5pt; color: rgb(236,90,71);">
              {% if page.title == 'About' %}
               [1]
              {% elsif page.title == 'Diary' %}
@@ -72,7 +72,17 @@
         {% if page.tag == 'IT' %}
           {% if page.title %}
             <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
-              · {{ page.title }}</a>
+              · {{ page.title }}
+              <span style="font-size: 5pt; color: rgb(236,90,71);">
+              {% if page.title == 'Android' %}
+               [{{ site.categories.android | size }}]
+              {% elsif page.title == 'Angular' %}
+               [{{ site.categories.angular | size }}]
+              {% elsif page.title == 'IOS' %}
+               [{{ site.categories.ios | size }}]
+               {% endif %}
+               </span>
+             </a>
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -85,7 +95,13 @@
         {% if page.tag == 'ETC' %}
           {% if page.title %}
             <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
-              · {{ page.title }}</a>
+              · {{ page.title }}
+              <span style="font-size: 5pt; color: rgb(236,90,71);">
+              {% if page.title == 'ETC' %}
+               [{{ site.categories.etc | size }}]
+               {% endif %}
+               </span>
+             </a>
           {% endif %}
         {% endif %}
       {% endfor %}
