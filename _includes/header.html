@@ -47,7 +47,19 @@
       {% for page in site.pages %}
         {% if page.tag == 'MY' %}
           {% if page.title %}
-            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">{{ page.title }}</a>
+            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
+             · {{ page.title }}
+             <span style="font-size: 3pt; color: rgb(236,90,71);">
+             {% if page.title == 'About' %}
+              [1]
+             {% elsif page.title == 'Diary' %}
+              [{{ site.categories.diary | size }}]
+             {% elsif page.title == 'Food' %}
+              [{{ site.categories.food | size }}]
+              {% endif %}
+              </span>
+            </a>
+
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -59,7 +71,8 @@
       {% for page in site.pages %}
         {% if page.tag == 'IT' %}
           {% if page.title %}
-            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">{{ page.title }}</a>
+            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
+              · {{ page.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -71,7 +84,8 @@
       {% for page in site.pages %}
         {% if page.tag == 'ETC' %}
           {% if page.title %}
-            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">{{ page.title }}</a>
+            <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}" style="font-weight: bold;">
+              · {{ page.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
