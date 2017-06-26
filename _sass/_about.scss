@@ -1,10 +1,7 @@
 .sidebar-wrapper {
     background: #3F51B5;
-    position: static;
     right: 0;
     width: inherit;
-    height: 100%;
-    min-height: 800px;
     color: #fff;
 }
 
@@ -43,7 +40,8 @@ img {
 }
 
 .sidebar-wrapper .container-block {
-    padding: 30px;
+    padding: 20px;
+    text-align:center
 }
 
 .sidebar-wrapper .container-block-title {
