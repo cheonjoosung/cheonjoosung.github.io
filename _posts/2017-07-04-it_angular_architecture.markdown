@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  "Angular Framework 개요"
+title:  "Angular Framework Architecture"
 date:   2017-07-04
 categories: angular
 highlight: false
-image: /images/it/170704_angular/angular.png
+image: /images/it/170703_angular/angular.png
 tag: angular
 ---
 
  AngularJS 로 시작하였고 MEAN Stack 의 하나로써 기술을 잡음으로써 많은 사람들에게 알려짐. 이때는 잦은 업데이트로 인해서 불편함이 많이 있었다고 한다. 필자도 1.x 버전으로 오픈소스 채팅(Sendbird)을 개발헀을 때 업데이트 변경요소도 짜증이 났지만 그냥 러닝커브가 상당히 길었다. 두달정도 하다가 2가 나오고 확 바뀐다는 말에 접었다.
 
- ![Dev Image](/images/it/170704_angular/angular.png)
+ ![Dev Image](/images/it/170703_angular/angular.png)
 
  <br><b>Angular 2 특징<b>
   - <b>1)</b> AngularJS 1 에서는 단순히 자바스크립트 프레임워크로써(JS 붙음) 되었지만 2부터는 JS 라는 단어가 빠지고 “One Framework for mobile & desktop” 타이틀을 가지고 갔다.
@@ -31,21 +31,21 @@ tag: angular
 ￼
 
 <br><br><b>Angular 2 관심도<b>
- ![Dev Image](/images/it/170704_angular/angular_interest1.png)
+ ![Dev Image](/images/it/170703_angular/angular_interest1.png)
 
 - Github 및 StackOverFlow 에서 각 프레임워크에 대한 활동을 바탕으로 만들어진 <a href="https://hotframeworks.com" target="_blank">프레임워크 랭킹 자료</a>
 입니다.
 
- ![Dev Image](/images/it/170704_angular/angular_interest2.png)
+ ![Dev Image](/images/it/170703_angular/angular_interest2.png)
 
 - 구글 트렌드에서 연관 프레임워크를 검색한 결과입니다. <a href="https://trends.google.com/trends/explore?q=angularjs,backbone.js,asp.net,emberjs,spring%20framework/?target=_blank" target="_blank">구글 트렌드 검색 페이지로 이동</a>
 
 <br><b>Angular 2 IDEs<b>
- ![Dev Image](/images/it/170704_angular/angular_tool.png)
+ ![Dev Image](/images/it/170703_angular/angular_tool.png)
 
 - Angular IDE 에는 위와 같은데 유료 버전 중에는 웹 스톰이 많은 자바스크립트 개발자들이 사용한다고 합니다. 가격도 제일 비쌉니다. 제가 Atom 과 Visual Studio Code 를 사용해봤는데 개발하는데 큰 지장은 없어보입니다.
 
 <br><b>Angular 2 Resources<b>
- ![Dev Image](/images/it/170704_angular/angular_resource.png)
+ ![Dev Image](/images/it/170703_angular/angular_resource.png)
 
 - Angular UI Component 및 Cross-Platform 연관된 리소스입니다.
