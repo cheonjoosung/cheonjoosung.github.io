@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Angular CLI"
+title:  "Angular CLI 설치"
 date:   2017-07-05
 categories: angular
 highlight: false
@@ -8,71 +8,34 @@ image: /images/it/170705_angular/angular_cli.jpg
 tag: angular
 ---
 
- Angular 는 JS와 HTML 를 가지고 클라이언트 앱을 만들기 위한 프레임워크이다. 해당 프레임워크는 몇 개의 라이브러리를 포함하고 있고 그중에는 핵심코어도 포함되어 있다. Angular 앱을 만들기 위해서는 HTML Templates, Components class, Services, modules 등 다양한 구조를 사용해야 한다. 아래에서는 Angular 에서 핵심적인 8개의 Architecture 에 대한 내용이다.
+ Angular 2 프로젝트의 설정파일은 상당히 많다. package.json 을 이용하여 일일히 설정하는 것은 비효율적이라고 생각하는 편이다.(물론 프로젝트 설정에 대한 이해도는 올라감) 효율적인 Angular CLI 를 통해서 프로젝트 환경설정을 간편히 하고 코드 개발에 시간을 더 투자하는 것이 현명한 방법이라고 생각한다.
 
 <br><br>
- ![Dev Image](/images/it/170704_angular/angular_arch1.png)
+ ![Dev Image](/images/it/170705_angular/angular_cli.jpg)
 
- <br><b>Angular Architecture</b>
- - 위는 Angular Architecture 의 구조를 한눈에 보여주는 사진이다. Modules, Templates, Components, Metadata, Directive, Data binding, Services, DI(Dependency injection) 이 있다. <br>Templates 은 화면에 나오는 View로 생각하면 되고 Components 는 View 에 관한 처리를 담당하고 서비스는 각 컴포넌트 마다 필요한 데이터 처리를 관리하는 부분이라고 생각하면 된다. Templates {{title}} - 변수, (click) - 액션 에 대한 내용은 Components 에서 관리하고 있다. hero 에 대한 내용은 Components 가 아니라 Services 에서 관리를 하고 있다.<br><b>구글에서는 Components 에서 데이터 처리를 하는 것을 권장하지 않고 Services 에서 처리하는 것을 권장한다. 즉 Components 는 Services를 호출하고 그 값을 binding 하여 Templates에 전달을 하는 역할을 하면 된다.</b>
+ <br><b>Angular CLI 소개</b>
+ - Angular CLI 는 개발에 집중할 수 있도록 도와주는 도구
+ - Angular 프로젝트 생성, 중요 구성요소 추가(컴포넌트, 지시자, 파이프, 서비스), 프로젝트 빌드 & 실행, 브라우저 동기화, 테스트 환경 제공, 배포를 위한 패키징 기능 제공
 
-<br><b>Modules</b>
-  ![Dev Image](/images/it/170704_angular/arch_modules.png)
+<br><b>Angular CLI 설치</b>
+  ![Dev Image](/images/it/170705_angular/angular_ng1.png)
 <br>
- - =) 특징을 가진 클래스를 모듈이라 하고 최소 하나 이상의 Angular Module(the root module or AppModule) 클래스를 가진다.
- - =) @NgModule decortor 를 사용하여 클래스를 정의함. 응용 플로그램을 구성하는데 도움을 주는 응집력 있는 블록 -> { }
+ - =)`npm install -g @angular/cli` - [node](https://nodejs.org/en/download) 가 설치되어 있어야 작동, `angular-cli deprecated`
+ - =)`ng` or `ng help` or `ng --help` 를 커맨드에 입력하면 설치가 제대로 되었는지 확인 가능하다. 또한, 사용가능한 명령어에 대한 설명도 확인이 가능하다.
+ - =) 기존에 angular-cli 가 설치되어 있는 경우에 `npm uninstall --save-dev angular-cli && npm install --save-dev @angular/cli@latest`
 
-
-<br><b>Components</b>
-   ![Dev Image](/images/it/170704_angular/arch_components.png)
+<br><b>Angular CLI 이용하여 프로젝트 만들기</b>
+  ![Dev Image](/images/it/170705_angular/angular_ng3.png)
 <br>
-- =) 스크린(View)의 일부분을 컨트롤. 즉 View를 지원하기 위한 application logic 을 정의하는 곳
-- =) 클래스 안에 선언 된 properties & method 의 API 를 통해 뷰와 정보를 주고 받음
-- =) Angular 는 User & Application 의 이동함에 따라 컴포넌트를 생성, 갱신, 제거함
+- =) Angular-CLI 가 설치가 완료되었다면 `ng new project_name_you_want`
+- =) `cd project_name_you_want`을 입력하여 해당 폴더로 이동
+- =) `ng serve` 를 입력하면 컴파일이 진행된 후에 로컬에 HTTP 서버가 실행됩니다. 해당 서버는 클라이언트 요청에 대해 응답합니다.
+- =) 브라우저 실행 후 주소창에 `localhost:4200` 을 입력하면 Angular Application 이 실행된 화면을 볼 수 있습니다.
 
-<br><b>Templates</b>
-   ![Dev Image](/images/it/170704_angular/arch_templates.png)
+<br><b>Angular CLI 명령어 모음</b>
 <br>
-- =) HTML 의 형태이며 Angular 가 Components 를 렌더링 하는 방법을 알려줌
-- =) HTML 을 사용하나 일부의 차이점 존재 -> Angular's template syntax 가 존재(ex : ngFor, (click), ngif 등)
-- =) <hero-detail></hero-detail> 을 통해 뷰를 재사용. metadata 의 selector 를 통해 선언하고 해당 네이밍을 통해 접근 함. 검색 Components 를 구현하고 selector : search 라 정의하면 검색 뷰를 쓰고 싶은 어느 곳에서 <search> </search> 태그를 사용하면 해당 뷰와 컨트롤 로직을 사용할 수 있다. 즉, 재 사용성이 높아짐.
-
-<br><b>Metadata</b>
-   ![Dev Image](/images/it/170704_angular/arch_metadata.png)
-<br>
-- =) Angular 에게 클래스를 처리하는 방법을 알려줌
-- =) @Component decorator 를 사용하여 metadata 추가
-- =) selector 는 Templates 에서 언급한 내용으로 <hero-detail></hero-detail> 을 통해 뷰를 재사용.
-- =) templateUrl : Component 의 HTML template 주소
-- =) providers : Component 가 사용하는 서비스를 위한 dependency injection providers
-
-<br><b>Data binding</b>
-   ![Dev Image](/images/it/170704_angular/arch_databinding.png)
-<br>
-- =) Component 와 Templates 사이에 데이터를 Push & Controll 하는 역할
-- =) Two-way Data binding 지원 - [(ng-model)] 사용
-- =) 4가지 형태의 데이터 바인딩 구문 존재.
-
-<br><b>Directives</b>
-   ![Dev Image](/images/it/170704_angular/arch_directive.png)
-<br>
-- =) @Directive decorator 를 가진 클래스로 directives 에 따라 DOM(Document Object Model) 변환
-- =) Structural & Attriute 2가지 형태가 존재 함
-
-<br><b>Services</b>
-   ![Dev Image](/images/it/170704_angular/arch_services.png)
-<br>
-- =) Application 에 필요한 values, function, feature 포함. (구글 권장 가이드)
-- =) nrrow & well-defined 된 목적을 가진 클래스 - 각 서비스는 하나의 기능만을 담당하도록 구성 (구글 권장 가이드)
-- =) 기본 클래스 처럼 코딩을 하고 DI(Dependency injection) 를 사용 함
-- =) Data fetch(http 통신 포함), 유저 input 검증, 로그 등의 역할을 수행(Component 가 작업 위임)
-
-<br><b>Dependency injection</b>
-   ![Dev Image](/images/it/170704_angular/arch_di.png)
-<br>
-- =) 클래스의 인스턴스에 필요한 DI를 제공하는 방법(대부분의 DI는 서비스)
-- =) Component 에 필요한 서비스를 제공하기 위해서 DI 사용
-- =) AppModule 에 providers 를 통해 서비스 등록 가능. 각 컴포넌트마다 서비스를 개별적으로 사용해도 되지만 구글은 AppModule 에 전역적으로 선언하고 사용하는 것을 권장
-
-
-<br><br><a href="https://angular.io/guide/architecture" target="_blank">Angular Architecture 자료 출처</a>
+- =) `ng g component component_name` or `ng g directive directive_name` or `ng g pipe pipe_name` or `ng g service service_name`. Component 의 경우 css, html, spec.ts, ts 파일 자동 생성 / Service, pipe, directive 의 경우 spec.ts, ts 파일 자동 생성
+- =) `ng build` 는 Test 용으로 파일크기 최적화가 아님. src/environments/enviroment.ts 파일의 개발환경 설정 정보를 이용하여 빌드 함
+- =) `ng build --prod --env=prod or ng build --prod` 는 프로젝트를 프로덕션용 빌드를 위해서 사용하는 명령어 => dist 디렉토리가 생성되고 결과가 저장됨
+- =) `ng test` - 단위 테스트 실행,  `ng e2e` - 종단 테스트(end to end test) 실행
+- =) `ng serve --port 4300 --live-reload port 49000` 서버 포트를 4300으로 변경, 라이브 리로드 서버 포트를 49000 으로 변경
