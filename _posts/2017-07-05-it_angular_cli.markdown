@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Angular Architecture"
-date:   2017-07-04
+title:  "Angular CLI"
+date:   2017-07-05
 categories: angular
 highlight: false
-image: /images/it/170704_angular/angular_architecture.jpg
+image: /images/it/170705_angular/angular_cli.jpg
 tag: angular
 ---
 
