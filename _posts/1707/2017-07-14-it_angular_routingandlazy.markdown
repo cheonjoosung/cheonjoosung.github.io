@@ -99,7 +99,7 @@ const routes: Routes = [
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
 {% endhighlight %}
-<p>=) 코드는 routing.ts 와 비슷하나 RouterModule.forChild(routes) 를 사용하는것이 조금 다릅니다. </p>
+<p>=) 코드는 routing.ts 와 비슷하나 RouterModule.forChild(routes) 를 사용하는것이 조금 다릅니다. forchild() 메서드는 RouterModule 의 메서드로 정적 메서드(static)이다. 모듈명을 통해 곧바로 메서드 접근 가능 </p>
 <p>=) 해당 코드까지 작성하면 lazy 를 클릭하면 해당 컴포넌트를 부를 수 있게됩니다.</p>
 
 <p>Lazy 개념을 사용하는 이유는 Angular 가 모든 모듈을 구동 시에 부르면 느릴 수 있습니다. 첫 화면에 필요한 부분만 부르고 특정 페이지에 들어갔을 때 해당 모듈을 부르게 된다면 속도도 빨리고 앱의 안정성도 높아질 것입니다. 애플리케이션의 규모가 커질수록 이 부분에 대한 고려가 많이 필요해질 것이라 생각합니다.</p>
