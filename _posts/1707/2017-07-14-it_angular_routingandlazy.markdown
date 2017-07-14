@@ -33,6 +33,8 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 <p>=) 라우터 패키지에서 라우터 모듈을 추가해줬고 호출할 컴포넌트 EagerComponent 가 임포트 시켰구요</p>
 <p>=) path: '경로', redirectTo: '디폴트 페이지', pathMatch: '매칭 정도'. 그리고 첫번째는 eager, lazy 를 클릭하면 그 때 LazyModule 을 불러서 lazy component 를 호출시키겠다는 의미에요. </p>
 <p>=) 마지막 줄을 위의 선언한 변수를 바탕으로 routing Service 를 제공하겠다는 의미에요.</p>
+<p>=) {path : 'list/:id, ....'} 으로 사용하면 url : list/id 를 사용하며 id값을 전달 가능</p>
+<p>=) {path : '**', NotFoundComponent} 으로 사용해서 매칭되지 않을 때의 페이지로 이동시켜도 된다</p>
 
 {% highlight ruby %}
 import { BrowserModule } from '@angular/platform-browser';
