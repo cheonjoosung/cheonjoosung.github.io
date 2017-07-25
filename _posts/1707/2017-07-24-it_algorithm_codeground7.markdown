@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Codeground 좋은수"
-date:   2017-07-19
+date:   2017-07-24
 categories: algorithm
 highlight: false
 image: /images/it/algorithm/algo.jpg
