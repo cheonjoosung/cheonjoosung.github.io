@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Codeground 극단적인 수"
-date:   2017-08-07
+title:  "Codeground 다트 게임"
+date:   2017-08-15
 categories: algorithm
 highlight: false
 image: /images/it/algorithm/algo.jpg
 tag: algorithm
 ---
 
-`CodeGround 의 수강신청 풀이에 관한 포스팅입니다.` 학점이 주어질 때 들을 수 있는 최대의 학점을 구하는 문제이다.
+`CodeGround 의 다트 게임 풀이에 관한 포스팅입니다.` 학점이 주어질 때 들을 수 있는 최대의 학점을 구하는 문제이다.
 
 <br><b>1) `주어진 문제를 풀이`</b><br>
 <p>=) 1) 제일 중요한 것은 주어진 최대 학점이 있다면 x, y , z ...... etc 을 더해서 같거나 작은 최대의 값을 구하면 된다.</p>
