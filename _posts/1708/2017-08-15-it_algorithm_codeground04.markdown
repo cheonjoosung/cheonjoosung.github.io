@@ -8,63 +8,133 @@ image: /images/it/algorithm/algo.jpg
 tag: algorithm
 ---
 
-`CodeGround 의 다트 게임 풀이에 관한 포스팅입니다.` 학점이 주어질 때 들을 수 있는 최대의 학점을 구하는 문제이다.
+`CodeGround 의 다트 게임 풀이에 관한 포스팅입니다.` 다트는 정중앙 지점에 맞으면 Bull 이라고 하여 50점을 주고 1~20까지의 점수중에 X3, X2를 해주는 지점이 있고 나머지는 X1 로 해서 점수를 주죠.
 
 <br><b>1) `주어진 문제를 풀이`</b><br>
-<p>=) 1) 제일 중요한 것은 주어진 최대 학점이 있다면 x, y , z ...... etc 을 더해서 같거나 작은 최대의 값을 구하면 된다.</p>
-<p>=) 2) 열리는 과목의 학점은 주어진 최대 학점보다 같거나 작은 수업이 존재할 수 있다.</p>
+<p>=) 1) 점수가 1 ~ 20 이므로 점수마다 이므로 18도(360/20)의 영역을 가지고 있습니다.</p>
+<p>=) 2) 어느 좌표가 주어지면 0,0 에서부터 거리를 계산후 Bull or triple or double or one or out 인지 판단</p>
+<p>=) 2-1) 그 후 0,0 과 a,b 를 이었을 때 각도를 체크 tan x = b/a 가 되는 x 도를 구합니다. 1~20 에서 어느 포인트에 꽂혔는지 계산합니다.</p>
+<p>=) 2-2) 점수 X 추가 점수 를 계산하면 됩니다.</p>
+<p>=) 3) 반지름이 1일 때 호의길이가 1이 되는 세타를 radian 이 됩니다.</p>
+<p>=) 3-1) 반원은 2*파이*반지름 의 반이므로 파이 & radin = r * 180 도 이므로 radin = 180 / 파이 인걸 알 수 있습니다.</p>
+<p>=) 3-2) degree = x radian X (180/파이) 를 하면 됩니다.</p>
 
 <br><b>2) `이제 정리된 문제를 코딩으로 옮기기`</b><br>
-<p>=) 1) Arrays.sort 를 이용해서 주어진 배열을 오름차순으로 정리 </p>
-<p>=) 2) sum = arr[lastIndex] 을 할당하고 MAX 랑 같은지 비교</p>
-<p>=) 2-1) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 랑 같으면 반복문 종료. Answer 출력</p>
-<p>=) 2-2) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 보다 작으면 sum += arr[index] 더한다.</p>
-<p>=) 2-3) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 보다 크면 break 시키고 Answer 할당.</p>
-<p>=) 2-4) Answer = Math.max(Answer, sum) 을 저장한다. </p>
+<p>=) 1) 포인트를 입력받으면 어느 지점에 꽂힌지 판단합니다. </p>
+<p>=) 2) 해당 포인트의 각도를 구합니다. rad = Math.atan2(y,x) 를 하면 rad 으로 나옵니다.</p>
+<p>=) 2-1) 구하는 각도는 radian x (180/Math.PI) 를 곱해야 합니다.</p>
+<p>=) 2-2) tan 의 각도는 0 ~ 180 / -180 ~ 0 사이의 값만 나옵니다.</p>
 
 {% highlight ruby %}
 
-Answer = 0;
+static int Answer;
+static int [] radious;
 
-int num = sc.nextInt();
-int sum = sc.nextInt();
+public static void main(String args[]) throws Exception	{
+	Scanner sc = new Scanner(System.in);
 
-int [] arr = new int[num];
+	int T = sc.nextInt();
 
-for(int i=0 ; i<num ; i++){
-  arr[i] = sc.nextInt();
+	for(int test_case = 0; test_case < T; test_case++) {
+		Answer = 0;
+
+		radious = new int[5];
+
+		for(int i=0 ; i<5 ; i++)
+			radious[i] = sc.nextInt();
+
+		int dartCount = sc.nextInt();
+
+		for(int i=0 ; i< dartCount ; i++) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+
+			double distance = getDistance(x, y);
+			double degree = getAngle(x, y);
+
+			int score = calScore(distance, degree);
+			Answer += score;
+		}
+
+		System.out.println("Case #"+(test_case+1));
+		System.out.println(Answer);
+	}
+	sc.close();
 }
 
-Arrays.sort(arr);
+public static int calScore(double distance, double degree) {
+	int point = getScore(degree);
 
-for(int i = num-1 ; i >= 0 ; i--) {
-  int max = 0;
-  max += arr[i];
-
-  if(max == sum) {
-    Answer = max;
-    break;
-  }
-
-  for(int j = i-1 ; j >= 0 ; j--) {
-    if(max + arr[j] == sum) {
-      Answer = max+arr[j];
-      break;
-    } else if(max + arr[j] > sum) {
-      continue;
-      } else {
-        max += arr[j];
-      }
-    }
-
-    if(Answer == sum) break;
-    else {
-      Answer = Math.max(Answer, max);
-    }
+	if(distance <= radious[0]) {
+		return 50;
+	} else if( (distance > radious[0] && distance < radious[1] )
+			|| ( distance > radious[2] && distance < radious[3] ) ){
+		return point;
+	} else if(distance >= radious[1] && distance <= radious[2]) {
+		return point*3;
+	} else if(distance >= radious[3] && distance <= radious[4]) {
+		return point*2;
+	} else {
+		return 0;
+	}
 }
 
-System.out.println("Case #"+(test_case+1));
-System.out.println(Answer);
+public static double getAngle(int x, int y) {
+	double rad = Math.atan2(y, x);
+	double degree = (rad*180) / Math.PI;
+
+	return degree;
+}
+
+public static double getDistance(int x, int y) {
+	return Math.sqrt(x*x + y*y);
+}
+
+public static int getScore(double tan) {
+	if( (tan >= 0 && tan < 9) || (tan >= -9 && tan <= 0) ) {
+		return 6;
+	} else if(tan >= 9 && tan < 27) {
+		return 13;
+	} else if(tan >= 27 && tan < 45) {
+		return 4;
+	} else if(tan >= 45 && tan < 63) {
+		return 18;
+	} else if(tan >= 63 && tan < 81) {
+		return 1;
+	} else if(tan >= 81 && tan < 99) {
+		return 20;
+	} else if(tan >= 99 && tan < 117) {
+		return 5;
+	} else if(tan >= 117 && tan < 135) {
+		return 12;
+	} else if(tan >= 135 && tan < 153) {
+		return 9;
+	} else if(tan >= 153 && tan < 171) {
+		return 14;
+	} else if((tan >= 171 && tan <= 180) || (tan >= -180 && tan < -171) ) {
+		return 11;
+	} else if(tan >= -171 && tan < -153) {
+		return 8;
+	} else if(tan >= -153 && tan < -135) {
+			eturn 16;
+	} else if(tan >= -135 && tan < -117) {
+		return 7;
+	} else if(tan >= -117 && tan < -99) {
+		return 19;
+	} else if(tan >= -99 && tan < -81) {
+		return 3;
+	} else if(tan >= -81 && tan < -63) {
+		return 17;
+	} else if(tan >= -63 && tan < -45) {
+		return 2;
+	} else if(tan >= -45 && tan < -27) {
+		return 15;
+	} else if(tan >= -27 && tan < -9) {
+		return 10;
+	} else {
+		return -1;
+	}
+}
 
 {% endhighlight %}
 

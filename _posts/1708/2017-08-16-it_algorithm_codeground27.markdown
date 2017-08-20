@@ -8,63 +8,89 @@ image: /images/it/algorithm/algo.jpg
 tag: algorithm
 ---
 
-`CodeGround 의 바이러스 풀이에 관한 포스팅입니다.` 학점이 주어질 때 들을 수 있는 최대의 학점을 구하는 문제이다.
+`CodeGround 의 바이러스 풀이에 관한 포스팅입니다.` 바이러스가 걸리면 연결된 간선을 끊고 주어진 조건을 만족하는 지를 판단하는 문제입니다.
 
 <br><b>1) `주어진 문제를 풀이`</b><br>
-<p>=) 1) 제일 중요한 것은 주어진 최대 학점이 있다면 x, y , z ...... etc 을 더해서 같거나 작은 최대의 값을 구하면 된다.</p>
-<p>=) 2) 열리는 과목의 학점은 주어진 최대 학점보다 같거나 작은 수업이 존재할 수 있다.</p>
+<p>=) 1) 1번 조건과 2번 조건은 그래프의 부분 그래프이므로 당연한 조건입니다.</p>
+<p>=) 2) 3번 조건이 이 문제를 해결하는데 가장 핵심입니다.</p>
+<p>=) 2-1) 정점의 차수는 최소 k 이면서 최대 |V'| - L - 1 이어야 하므로 예시에서는 k 가 1 이고 L 이 2 V' 은 제일 처음은 1~5까지 다 있는 그래프라고 가정한다면, 1번 정점은 차수가 최대치를 넘어가므로 제거되어야 합니다.</p>
+<p>=) 2-2) 1번은 제거하고 2~5번 부터 3번 조건이 부합되는지를 점검하고 다 만족하면 제거된 정점의 합을 출력하면 됩니다.</p>
 
 <br><b>2) `이제 정리된 문제를 코딩으로 옮기기`</b><br>
-<p>=) 1) Arrays.sort 를 이용해서 주어진 배열을 오름차순으로 정리 </p>
-<p>=) 2) sum = arr[lastIndex] 을 할당하고 MAX 랑 같은지 비교</p>
-<p>=) 2-1) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 랑 같으면 반복문 종료. Answer 출력</p>
-<p>=) 2-2) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 보다 작으면 sum += arr[index] 더한다.</p>
-<p>=) 2-3) lastIndex 부터 0 번째까지 차례대로 더하면서 MAX 보다 크면 break 시키고 Answer 할당.</p>
-<p>=) 2-4) Answer = Math.max(Answer, sum) 을 저장한다. </p>
+<p>=) 1) 주어진 간선을 입력받을 때 a[first][second] = 1 , a[second][first] = 1 양쪽에 다 넣습니다.</p>
+<p>=) 2) V' 의 정점의 갯수에 따라 최소 간선과 최대 간선을 구합니다.</p>
+<p>=) 2-1) 조건을 만족하지 않으면 정점에서 제거함</p>
+<p>=) 2-2) 제거하고 반복하면서 조건을 다 만족한다면 break;</p>
 
 {% highlight ruby %}
 
 Answer = 0;
 
-int num = sc.nextInt();
-int sum = sc.nextInt();
+int k = sc.nextInt(); //1개 이상의 로봇과 통신해야 되는 수
+int l = sc.nextInt(); //감영된 후 L 개 이상의 로봇이 살아남도
 
-int [] arr = new int[num];
+//각 정점의 차수 G` 은 최소 k 이면서 최대 |V`| - L - 1
 
-for(int i=0 ; i<num ; i++){
-  arr[i] = sc.nextInt();
+int n = sc.nextInt(); //그래프 정점 수
+int line = sc.nextInt(); //총 간선의 갯수
+
+int [][] a = new int[n+1][n+1];
+
+ArrayList<Integer> removedList = new ArrayList<>();
+boolean isFound = false;
+
+for(int [] temp : a)
+	Arrays.fill(temp, -1);
+
+for(int i=0; i<line ; i++) {
+  int first = sc.nextInt();
+  int second = sc.nextInt();
+
+  a[first][second] = 1;
+  a[second][first] = 1;
 }
 
-Arrays.sort(arr);
+int size = n;
 
-for(int i = num-1 ; i >= 0 ; i--) {
-  int max = 0;
-  max += arr[i];
+while( size >= l) {
+  size = n - removedList.size()
+  int minLine = k;
 
-  if(max == sum) {
-    Answer = max;
-    break;
+  int maxLine = size - l -1;
+  int totalCount = 0;
+
+  for(int i=1 ; i<n+1 ; i++) {
+    if(removedList.contains(i)) continue;
+
+    int lineCount = 0;
+
+    for(int j=1 ; j<n+1 ; j++) {
+      if(removedList.contains(i) || removedList.contains(j)) continue;
+      if(a[i][j] == 1) lineCount++;
+    }
+
+    if(lineCount >= minLine && lineCount <= maxLine) {
+      totalCount++;
+    } else {
+      removedList.add(i);
+      break;
+    }
   }
 
-  for(int j = i-1 ; j >= 0 ; j--) {
-    if(max + arr[j] == sum) {
-      Answer = max+arr[j];
-      break;
-    } else if(max + arr[j] > sum) {
-      continue;
-      } else {
-        max += arr[j];
-      }
-    }
-
-    if(Answer == sum) break;
-    else {
-      Answer = Math.max(Answer, max);
-    }
+  if(size == totalCount) break;
 }
 
-System.out.println("Case #"+(test_case+1));
-System.out.println(Answer);
+for(int val : removedList) {
+  Answer += val;
+}
+
+if(size < l) {
+  Answer = 0;
+  for(int i=1; i<=n ; i++) {
+    Answer += i;
+  }
+}
+
 
 {% endhighlight %}
 
