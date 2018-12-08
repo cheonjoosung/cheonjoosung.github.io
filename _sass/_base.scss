@@ -3,7 +3,9 @@
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
-ul, ol, dl, figure,
+ol, dl, figure,
+ul li {list-style-type: square;}
+
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
