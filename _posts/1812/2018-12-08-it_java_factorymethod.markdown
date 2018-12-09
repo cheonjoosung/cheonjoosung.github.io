@@ -8,17 +8,9 @@ image: /images/it/java.png
 tag: java
 ---
 
-# 서론
----------------------
-###### 클래스를 이용하여 객체를 만들 때 일반적으로 public 으로 선언된 생성자를 이용합니다.<br>이외에도 public으로 선언된 정적 팩터리 메서드(static factory method) 를 추가하는 방법이 있습니다.<br>아래는 Boolean 클래스(boolean을 클래스화)
-{% highlight ruby %}
-public static Boolean valueOf(boolean b) {
-  return b ? Boolean.TRUE : Boolean.FALSE;
-}
-{% endhighlight %}
-###### Design Pattern 의 팩터리 메서드의 개념과 다름의 유의!
+###### 클래스를 이용하여 객체를 만들 때 일반적으로 public으로 선언된 생성자를 이용합니다. 이외에도 public으로 선언된 정적 팩터리 메서드(static factory method) 를 추가하는 방법이 있습니다. Design Pattern 의 팩터리 메서드의 개념과 다름의 유의!
 
-
+<br>
 # 장점
 ---------------------
 ###### 생성자 대신 정적 팩터리 메서드를 사용하면 다양한 장점이 생깁니다.
@@ -32,6 +24,12 @@ public static Boolean valueOf(boolean b) {
 * 만든 객체를 캐시 해놓고 재사용하여 불필요한 생성 방지 -> 성능 개선
 
 ###### 동일한 객체가 요청되는 일이 잦고 객체를 만드는 비용이 크다면 정적 팩터리 메서드를 활용하는 것이 좋다. 이는 경량 패턴과 유사하며, 위의 예제 Boolean.valueOf(Boolean)가 위의 기법을 잘 활용한 형태이다.<br>객체를 반복해서 반환할 수 있으므로 특정 시점에 어떤 객체의 수를 제어할 수 있다. 개체 수를 제어하면 싱글턴 패턴(1개)), 객체 생성이 불가능한 클래스, 변경이 불가능한 클래스(두 개의 같은 객체 존재하지 못하도록)를 만들 수 있다.
+
+{% highlight ruby %}
+public static Boolean valueOf(boolean b) {
+  return b ? Boolean.TRUE : Boolean.FALSE;
+}
+{% endhighlight %}
 
 **3. 자료형의 하위 자료형 객체를 반활할 수 있음**
 * 반환되는 객체를 유연하게 사용할 수 있음
@@ -91,6 +89,7 @@ public static <K, V> HashMap<K, V> newInstance() {
 
 ###### jdk 1.6 까지는 미지원 기능
 
+<br>
 # 단점
 ---------------------
 ###### 정적 팩터리 메서드를 사용하면 아래와 같은 단점이 존재합니다.
@@ -110,7 +109,7 @@ public static <K, V> HashMap<K, V> newInstance() {
 * getType : getInstace 동일, 반환될 객체의 클래스와 다른 클래스에 팩터리 메서드가 있을 때 사용. Type은 팩터리 메서드가 반환할 객체의 자료형
 * newType : newInstance 동일, 반환될 객체의 클래스와 다른 클래스에 팩터리 메서드가 있을 때 사용. Type은 팩터리 메서드가 반환할 객체의 자료형
 
-
+<br>
 # 결론
 ---------------------
 ###### 정적 팩터리 메서드와 public 생성자는 용도를 알아야 하고 장단점을 이해해야 한다. 정적 팩터리 메서드의 장점이 많이 생기는 경우에는 정적 팩터리 메서드를 활용하여 프로그램을 더 가독성, 사용성, 효율성 있게 만들어야 한다.
