@@ -1,0 +1,9 @@
+1. Personal Information
+Do Not Collect Personal Information(ex: name, address, phone-number etc)
+
+2. Advertisement
+All Advertisement are on Google's AdMob network.
+
+3. Firebase Crshlytics
+It is for Crash or Error in mobile app.
+Google Crashlytics : https://firebase.google.com/terms/crashlytics?hl=ko
