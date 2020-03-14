@@ -1,4 +1,4 @@
-I"><h6 id="클래스를-이용하여-객체를-만들-때-일반적으로-public으로-선언된-생성자를-이용합니다-이외에도-public으로-선언된-정적-팩터리-메서드static-factory-method-를-추가하는-방법이-있습니다-design-pattern-의-팩터리-메서드의-개념과-다름의-유의">클래스를 이용하여 객체를 만들 때 일반적으로 public으로 선언된 생성자를 이용합니다. 이외에도 public으로 선언된 정적 팩터리 메서드(static factory method) 를 추가하는 방법이 있습니다. Design Pattern 의 팩터리 메서드의 개념과 다름의 유의!</h6>
+I"�<<h6 id="클래스를-이용하여-객체를-만들-때-일반적으로-public으로-선언된-생성자를-이용합니다-이외에도-public으로-선언된-정적-팩터리-메서드static-factory-method-를-추가하는-방법이-있습니다-design-pattern-의-팩터리-메서드의-개념과-다름의-유의">클래스를 이용하여 객체를 만들 때 일반적으로 public으로 선언된 생성자를 이용합니다. 이외에도 public으로 선언된 정적 팩터리 메서드(static factory method) 를 추가하는 방법이 있습니다. Design Pattern 의 팩터리 메서드의 개념과 다름의 유의!</h6>
 
 <p><br /></p>
 <h1 id="장점">장점</h1>
@@ -109,14 +109,6 @@
 <h1 id="결론">결론</h1>
 <hr />
 <h6 id="정적-팩터리-메서드와-public-생성자는-용도를-알아야-하고-장단점을-이해해야-한다-정적-팩터리-메서드의-장점이-많이-생기는-경우에는-정적-팩터리-메서드를-활용하여-프로그램을-더-가독성-사용성-효율성-있게-만들어야-한다">정적 팩터리 메서드와 public 생성자는 용도를 알아야 하고 장단점을 이해해야 한다. 정적 팩터리 메서드의 장점이 많이 생기는 경우에는 정적 팩터리 메서드를 활용하여 프로그램을 더 가독성, 사용성, 효율성 있게 만들어야 한다.</h6>
-
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<!-- 사각형 광고 -->
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3551444505310572" data-ad-slot="4970363026" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
 
 <p><code class="highlighter-rouge">Effecitve Java 2/E by 조슈아 블로크 책에 내용을 참고하였습니다.</code></p>
 :ET
