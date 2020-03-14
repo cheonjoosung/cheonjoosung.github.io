@@ -1,0 +1,83 @@
+I"o-<p><code class="highlighter-rouge">CodeGround 의 바이러스 풀이에 관한 포스팅입니다.</code> 바이러스가 걸리면 연결된 간선을 끊고 주어진 조건을 만족하는 지를 판단하는 문제입니다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">주어진 문제를 풀이</code></b><br /></p>
+<p>=) 1) 1번 조건과 2번 조건은 그래프의 부분 그래프이므로 당연한 조건입니다.</p>
+<p>=) 2) 3번 조건이 이 문제를 해결하는데 가장 핵심입니다.</p>
+<p>=) 2-1) 정점의 차수는 최소 k 이면서 최대 |V'| - L - 1 이어야 하므로 예시에서는 k 가 1 이고 L 이 2 V' 은 제일 처음은 1~5까지 다 있는 그래프라고 가정한다면, 1번 정점은 차수가 최대치를 넘어가므로 제거되어야 합니다.</p>
+<p>=) 2-2) 1번은 제거하고 2~5번 부터 3번 조건이 부합되는지를 점검하고 다 만족하면 제거된 정점의 합을 출력하면 됩니다.</p>
+
+<p><br /><b>2) <code class="highlighter-rouge">이제 정리된 문제를 코딩으로 옮기기</code></b><br /></p>
+<p>=) 1) 주어진 간선을 입력받을 때 a[first][second] = 1 , a[second][first] = 1 양쪽에 다 넣습니다.</p>
+<p>=) 2) V' 의 정점의 갯수에 따라 최소 간선과 최대 간선을 구합니다.</p>
+<p>=) 2-1) 조건을 만족하지 않으면 정점에서 제거함</p>
+<p>=) 2-2) 제거하고 반복하면서 조건을 다 만족한다면 break;</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span> <span class="sr">//</span><span class="mi">1</span><span class="err">개</span> <span class="err">이상의</span> <span class="err">로봇과</span> <span class="err">통신해야</span> <span class="err">되는</span> <span class="err">수</span>
+<span class="n">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span> <span class="sr">//</span><span class="err">감영된</span> <span class="err">후</span> <span class="no">L</span> <span class="err">개</span> <span class="err">이상의</span> <span class="err">로봇이</span> <span class="err">살아남도</span>
+
+<span class="sr">//</span><span class="err">각</span> <span class="err">정점의</span> <span class="err">차수</span> <span class="no">G</span><span class="sb">` 은 최소 k 이면서 최대 |V`</span><span class="o">|</span> <span class="o">-</span> <span class="no">L</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span> <span class="sr">//</span><span class="err">그래프</span> <span class="err">정점</span> <span class="err">수</span>
+<span class="n">int</span> <span class="n">line</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span> <span class="sr">//</span><span class="err">총</span> <span class="err">간선의</span> <span class="err">갯수</span>
+
+<span class="n">int</span> <span class="p">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="no">ArrayList</span><span class="o">&lt;</span><span class="no">Integer</span><span class="o">&gt;</span> <span class="n">removedList</span> <span class="o">=</span> <span class="n">new</span> <span class="no">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">boolean</span> <span class="n">isFound</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="p">[]</span> <span class="n">temp</span> <span class="p">:</span> <span class="n">a</span><span class="p">)</span>
+	<span class="no">Arrays</span><span class="p">.</span><span class="nf">fill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">line</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+  <span class="n">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+  <span class="n">a</span><span class="p">[</span><span class="n">first</span><span class="p">][</span><span class="n">second</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">a</span><span class="p">[</span><span class="n">second</span><span class="p">][</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+<span class="k">while</span><span class="p">(</span> <span class="n">size</span> <span class="o">&gt;=</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">size</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">removedList</span><span class="p">.</span><span class="nf">size</span><span class="p">()</span>
+  <span class="n">int</span> <span class="n">minLine</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+
+  <span class="n">int</span> <span class="n">maxLine</span> <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="n">l</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">int</span> <span class="n">totalCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">removedList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">continue</span><span class="p">;</span>
+
+    <span class="n">int</span> <span class="n">lineCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">removedList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">||</span> <span class="n">removedList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="n">continue</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">lineCount</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">lineCount</span> <span class="o">&gt;=</span> <span class="n">minLine</span> <span class="o">&amp;&amp;</span> <span class="n">lineCount</span> <span class="o">&lt;=</span> <span class="n">maxLine</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">totalCount</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">removedList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">totalCount</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">val</span> <span class="p">:</span> <span class="n">removedList</span><span class="p">)</span> <span class="p">{</span>
+  <span class="no">Answer</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+  <span class="no">Answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="no">Answer</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">코드그라운드 문제 풀이를 공유하는 것이 문제가 되면 바로 삭제하도록 하겠습니다. 풀이에 대해 이해가 안되는 것은 메일을 통해 전달 부탁드립니다. 그게 제일 빨라요</code></p>
+:ET

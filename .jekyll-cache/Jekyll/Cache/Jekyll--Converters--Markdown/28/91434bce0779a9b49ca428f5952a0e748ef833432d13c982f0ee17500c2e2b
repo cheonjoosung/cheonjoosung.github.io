@@ -1,0 +1,168 @@
+I"�C<p><code class="highlighter-rouge">Angular 의 Routing Guard 에 관한 포스팅입니다.</code> 가드라는 말은 말그대로 어떤것을 지킨다의 의미겠죠? Angular 에서 가드(Guard)는 라우팅 시 접근을 제어하는 방법입니다. 네이버를 본다면 마이 페이지의 경우 로그인이 되어 있지않으면 팅겨야 하지 않을까요? 앵귤러를 통해 대규모 애플리케이션을 제작은 안해봤지만 제 생각으로는 권한이 필요한 부분에 Guard 의 개념이 쓰일 것이라 생각합니다. 가드에는 크게 <code class="highlighter-rouge">CanActivate, CanActivateChild, CanDeactivate, Resolve -&gt; CanLoad 변경된 듯...?</code> 4가지 종류가 있습니다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">1 CanActivate Guard?</code></b><br /></p>
+<p>=) 라우트 권한을 검사해 접근을 허용할지 말지 결정하는 가드 : 요청 URL 에 라우팅 정보가 있는지 체크 </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">UserToken</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">Permissions</span> <span class="p">{</span>
+  <span class="n">canActivate</span><span class="p">(</span><span class="ss">user: </span><span class="no">UserToken</span><span class="p">,</span> <span class="ss">id: </span><span class="n">string</span><span class="p">):</span> <span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kp">true</span><span class="p">;</span> <span class="c1">#UserToken, id 에 따라 true or false 를 리턴하는 로직 만들어야 함</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@Injectable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CanActivateTeam</span> <span class="n">implements</span> <span class="no">CanActivate</span> <span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">permissions: </span><span class="no">Permissions</span><span class="p">,</span> <span class="kp">private</span> <span class="ss">currentUser: </span><span class="no">UserToken</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="n">canActivate</span><span class="p">(</span>
+    <span class="ss">route: </span><span class="no">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="ss">state: </span><span class="no">RouterStateSnapshot</span>
+  <span class="p">):</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="no">Promise</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">permissions</span><span class="p">.</span><span class="nf">canActivate</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">currentUser</span><span class="p">,</span> <span class="n">route</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">id</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@NgModule</span><span class="p">({</span>
+  <span class="ss">imports: </span><span class="p">[</span>
+    <span class="no">RouterModule</span><span class="p">.</span><span class="nf">forRoot</span><span class="p">([</span>
+      <span class="p">{</span>
+        <span class="ss">path: </span><span class="s1">'team/:id'</span><span class="p">,</span>
+        <span class="ss">component: </span><span class="no">TeamCmp</span><span class="p">,</span> <span class="c1">#이동 페이지</span>
+        <span class="ss">canActivate: </span><span class="p">[</span><span class="no">CanActivateTeam</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">])</span>
+  <span class="p">],</span>
+  <span class="ss">providers: </span><span class="p">[</span><span class="no">CanActivateTeam</span><span class="p">,</span> <span class="no">UserToken</span><span class="p">,</span> <span class="no">Permissions</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{}</span></code></pre></figure>
+
+<p>위의 코드 <a href="https://angular.io/api/router/CanActivate/">Angular 공식</a> 참고</p>
+<p>=) `CanActivateTeam, UserToken, Pemissions` 을 providers 로 제공 </p>
+<p>=) RouterModule.ts 로 만들어 임포트도 가능</p>
+<p>=) <b>이해가 안되는 점 : UserToken, Permission 은 Injectable 없이 Providers 로 제공이 가능한 서비스 인지...?</b></p>
+
+<p><br /><b>1) <code class="highlighter-rouge">2. CanActivateChild Guard?</code></b><br /></p>
+<p>=) 자식 라우트에 대한 접근 허용할지 말지 결정하는 가드</p>
+<p>=) </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">UserToken</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">Permissions</span> <span class="p">{</span>
+  <span class="n">canActivate</span><span class="p">(</span><span class="ss">user: </span><span class="no">UserToken</span><span class="p">,</span> <span class="ss">id: </span><span class="n">string</span><span class="p">):</span> <span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kp">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@Injectable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CanActivateTeam</span> <span class="n">implements</span> <span class="no">CanActivateChild</span> <span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">permissions: </span><span class="no">Permissions</span><span class="p">,</span> <span class="kp">private</span> <span class="ss">currentUser: </span><span class="no">UserToken</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="n">canActivateChild</span><span class="p">(</span>
+    <span class="ss">route: </span><span class="no">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="ss">state: </span><span class="no">RouterStateSnapshot</span>
+  <span class="p">):</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="no">Promise</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">permissions</span><span class="p">.</span><span class="nf">canActivate</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">currentUser</span><span class="p">,</span> <span class="n">route</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">id</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@NgModule</span><span class="p">({</span>
+  <span class="ss">imports: </span><span class="p">[</span>
+    <span class="no">RouterModule</span><span class="p">.</span><span class="nf">forRoot</span><span class="p">([</span>
+      <span class="p">{</span>
+        <span class="ss">path: </span><span class="s1">'root'</span><span class="p">,</span>
+        <span class="ss">canActivateChild: </span><span class="p">[</span><span class="no">CanActivateTeam</span><span class="p">],</span>
+        <span class="ss">children: </span><span class="p">[</span>
+          <span class="p">{</span>
+             <span class="ss">path: </span><span class="s1">'team/:id'</span><span class="p">,</span>
+             <span class="ss">component: </span><span class="no">Team</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">])</span>
+  <span class="p">],</span>
+  <span class="ss">providers: </span><span class="p">[</span><span class="no">CanActivateTeam</span><span class="p">,</span> <span class="no">UserToken</span><span class="p">,</span> <span class="no">Permissions</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{}</span></code></pre></figure>
+
+<p>위의 코드 <a href="https://angular.io/api/router/CanActivateChild">Angular 공식</a> 참고</p>
+<p>=) 사용하는 부분에서는 CanActive Guard 와 거의 차이가 없음. 루트 모듈에 선언시 canActivateChild 를 사용하는 부분과 childeren: [ { } ] 부분</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">3. CanDeactivate Guard?</code></b><br /></p>
+<p>=) 저장되지 않은 상태를 버릴지 결정 : 웹 페이지에서 글 작성 시 페이지 주소가 바뀔 때 변경사항을 저장할지 말지를 사용자에게 알리기 위해서 사용</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">UserToken</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">Permissions</span> <span class="p">{</span>
+  <span class="n">canDeactivate</span><span class="p">(</span><span class="ss">user: </span><span class="no">UserToken</span><span class="p">,</span> <span class="ss">id: </span><span class="n">string</span><span class="p">):</span> <span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kp">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@Injectable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CanDeactivateTeam</span> <span class="n">implements</span> <span class="no">CanDeactivate</span><span class="o">&lt;</span><span class="no">TeamComponent</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">permissions: </span><span class="no">Permissions</span><span class="p">,</span> <span class="kp">private</span> <span class="ss">currentUser: </span><span class="no">UserToken</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="n">canDeactivate</span><span class="p">(</span>
+    <span class="ss">component: </span><span class="no">TeamComponent</span><span class="p">,</span>
+    <span class="ss">currentRoute: </span><span class="no">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="ss">currentState: </span><span class="no">RouterStateSnapshot</span><span class="p">,</span>
+    <span class="ss">nextState: </span><span class="no">RouterStateSnapshot</span>
+  <span class="p">):</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="no">Promise</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">permissions</span><span class="p">.</span><span class="nf">canDeactivate</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">currentUser</span><span class="p">,</span> <span class="n">route</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">id</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@NgModule</span><span class="p">({</span>
+  <span class="ss">imports: </span><span class="p">[</span>
+    <span class="no">RouterModule</span><span class="p">.</span><span class="nf">forRoot</span><span class="p">([</span>
+      <span class="p">{</span>
+        <span class="ss">path: </span><span class="s1">'team/:id'</span><span class="p">,</span>
+        <span class="ss">component: </span><span class="no">TeamCmp</span><span class="p">,</span>
+        <span class="ss">canDeactivate: </span><span class="p">[</span><span class="no">CanDeactivateTeam</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">])</span>
+  <span class="p">],</span>
+  <span class="ss">providers: </span><span class="p">[</span><span class="no">CanDeactivateTeam</span><span class="p">,</span> <span class="no">UserToken</span><span class="p">,</span> <span class="no">Permissions</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{}</span></code></pre></figure>
+
+<p>위의 코드 <a href="https://angular.io/api/router/CanDeactivate">Angular 공식</a> 참고
+<a href="http://projectl33t.xyz/archives/255">관련 추가 자료</a> 라우팅에 관해 잘 정리해 놓으심</p>
+<p>=) canDeactivate() 에 페이지에 대한 정보를 저장하는 것 같다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">4. CanLoad Guard?</code></b><br /></p>
+<p>=) 사용자가 권한을 부여받지 않는 경우 응용 프로그램이 전체 모듈을 지연로드 하는 것을 방지하기 위해 사용</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">UserToken</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">Permissions</span> <span class="p">{</span>
+  <span class="n">canLoadChildren</span><span class="p">(</span><span class="ss">user: </span><span class="no">UserToken</span><span class="p">,</span> <span class="ss">id: </span><span class="n">string</span><span class="p">):</span> <span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kp">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@Injectable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CanLoadTeamSection</span> <span class="n">implements</span> <span class="no">CanLoad</span> <span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">permissions: </span><span class="no">Permissions</span><span class="p">,</span> <span class="kp">private</span> <span class="ss">currentUser: </span><span class="no">UserToken</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="n">canLoad</span><span class="p">(</span><span class="ss">route: </span><span class="no">Route</span><span class="p">):</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="no">Promise</span><span class="o">&lt;</span><span class="n">boolean</span><span class="o">&gt;|</span><span class="n">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">permissions</span><span class="p">.</span><span class="nf">canLoadChildren</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">currentUser</span><span class="p">,</span> <span class="n">route</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vi">@NgModule</span><span class="p">({</span>
+  <span class="ss">imports: </span><span class="p">[</span>
+    <span class="no">RouterModule</span><span class="p">.</span><span class="nf">forRoot</span><span class="p">([</span>
+      <span class="p">{</span>
+        <span class="ss">path: </span><span class="s1">'team/:id'</span><span class="p">,</span>
+        <span class="ss">component: </span><span class="no">TeamCmp</span><span class="p">,</span>
+        <span class="ss">loadChildren: </span><span class="s1">'team.js'</span><span class="p">,</span>
+        <span class="ss">canLoad: </span><span class="p">[</span><span class="no">CanLoadTeamSection</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">])</span>
+  <span class="p">],</span>
+  <span class="ss">providers: </span><span class="p">[</span><span class="no">CanLoadTeamSection</span><span class="p">,</span> <span class="no">UserToken</span><span class="p">,</span> <span class="no">Permissions</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{}</span></code></pre></figure>
+
+<p>위의 코드 <a href="https://angular.io/api/router/CanLoad">Angular 공식</a> 참고</p>
+
+<p><code class="highlighter-rouge">전체적으로 가드에 대한 설명이 부족하다... 실전으로 하면서 겪어야 될 것 같네요. 내용에 관한 정보가 부족한 상황이라 저도 점차적으로 테스트 한 후에 포스팅을 점차 수정하도록 하겠습니다.</code></p>
+:ET

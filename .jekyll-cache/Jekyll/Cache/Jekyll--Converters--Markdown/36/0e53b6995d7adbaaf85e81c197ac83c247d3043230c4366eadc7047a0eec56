@@ -1,0 +1,2 @@
+I"�<p><code class="highlighter-rouge">Angular Service(앵귤러 서비스) 기초에 관한 포스팅입니다.</code> Angular 에서 Service 는 외부에서 정의된 의존성 주입(Dependeny Injection) 대상이 되는 클래스에요. 서비스를 사용하기 위해서는 몇가지 세팅이 필요해요. Providers 선언, injectable 등 서비스에 전반적인 개념과 사용법에 대한 글을 써볼께요.</p>
+:ET

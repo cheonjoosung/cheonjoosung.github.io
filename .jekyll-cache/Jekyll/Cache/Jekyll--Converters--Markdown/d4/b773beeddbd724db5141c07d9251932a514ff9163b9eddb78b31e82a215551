@@ -1,0 +1,2 @@
+I"�<p><code class="highlighter-rouge">CodeGround 의 방속의 거울에 관한 포스팅입니다.</code> 코드 그라운드 문제의 난이도는 Basic 인 것 같아요. 문제를 읽고 어떻게 풀어야 될지 딱 나오는 쉬운 문제였던 것 같아요. 조심해야할 점은 다른 것은 input data 0 1 2 식으로 한칸 띄어서 주는데 여기서는 012 붙여서 주기에 scanner.nextLine() 을 통해서 받은 후 한글자씩 받아서 데이터를 넣어줘야 합니다.</p>
+:ET

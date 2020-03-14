@@ -1,0 +1,28 @@
+I"<p><code class="highlighter-rouge">TypeScript</code> 는 마이크로소프트에서 만든? 관리한? <a href="https://github.com/Microsoft/TypeScript">오픈소스</a> 이다. 비쥬얼 스튜디오만 사용하던 MS가 웹 타입 언어를 만들었다는 점이 처음에 놀라웠지만 그들도 IT 흐름에 따라가기 시작하는 것 같다. <a href="https://www.typescriptlang.org">공식사이트</a> 참조</p>
+
+<p><br /><br />
+ <img src="/images/it/170706_angular/tsc_logo.png" alt="Dev Image" /></p>
+
+<p><br /><b>TypeSciprt 소개</b></p>
+<ul>
+  <li><code class="highlighter-rouge">TypeSciprt = Javascript + Type</code> 라고 생각하면 가장 편한것 같다. ECMA 스크립트 등 스크립트 언어의 역사도 보면 좋지만 <code class="highlighter-rouge">TypeScript 가 대세</code>가 될 것 같다.</li>
+  <li>컴파일을 통해 TypeScript -&gt; Javasciprt 로 변환하기에 발생될 수 있는 문제들을 사전체크 함!!!!!!!</li>
+  <li>호이스팅(hoisting) 같은 내부적인 결함 or 대규모 애플리케이션 개발에서 발생하는 복잡성의 문제 해결 가능</li>
+  <li>Angular 의 경우 Angular 코어를 TypeSciprt 로 만들고 컴파일 도구를 통해 ES5, ES6, 다트 언어(구글에서 만든 언어)로 변환하는 방법 사용 - ECMA 스크립트 표준을 따르면 마이그레이션 지원 할 것 같음</li>
+  <li>최신버전 - 2.4</li>
+</ul>
+
+<p><br /><b>TypeScript 설치</b></p>
+<ul>
+  <li>=)<code class="highlighter-rouge">npm install -g typescript</code></li>
+  <li>=)<code class="highlighter-rouge">tsc filename.ts</code> 를 통해 컴파일 가능. 하지만 angular 에서는 한번 실행후에는 live-reload 방식을 사용해서 자동 컴파일 한 후에 애플리케이션에 변경 내용을 적용함</li>
+</ul>
+
+<p><br /><b>TypeScript 지원 Tool</b>
+   <img src="/images/it/170706_angular/tsc_tool.png" alt="Dev Image" />
+ <br /></p>
+
+<p><br /><b>TypeScript Use</b>
+   <img src="/images/it/170706_angular/tsc_use.png" alt="Dev Image" />
+ <br /></p>
+:ET

@@ -1,0 +1,2 @@
+I"�<p><code class="highlighter-rouge">Angular 의 Routing Guard 에 관한 포스팅입니다.</code> 가드라는 말은 말그대로 어떤것을 지킨다의 의미겠죠? Angular 에서 가드(Guard)는 라우팅 시 접근을 제어하는 방법입니다. 네이버를 본다면 마이 페이지의 경우 로그인이 되어 있지않으면 팅겨야 하지 않을까요? 앵귤러를 통해 대규모 애플리케이션을 제작은 안해봤지만 제 생각으로는 권한이 필요한 부분에 Guard 의 개념이 쓰일 것이라 생각합니다. 가드에는 크게 <code class="highlighter-rouge">CanActivate, CanActivateChild, CanDeactivate, Resolve -&gt; CanLoad 변경된 듯...?</code> 4가지 종류가 있습니다.</p>
+:ET

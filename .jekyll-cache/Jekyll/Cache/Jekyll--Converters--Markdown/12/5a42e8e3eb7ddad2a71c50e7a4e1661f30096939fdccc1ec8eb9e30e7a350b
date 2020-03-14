@@ -1,0 +1,84 @@
+I"�@<p><code class="highlighter-rouge">CodeGround 의 화학자의 문장 풀이에 관한 포스팅입니다.</code> 풀면서 의아했던 점이 왜 Java 는 4초 이내일까 라는 부분이다. 충분히 2초내에 주어진 테스트 케이스를 끝낼 수 있을 것 같기 때문이다. 화학자의 문장은 한글자 체크 두글자 체크해서 모든 예외사항을 체크하지 않으면 100점에 도달하기 힘든 문제였던 것 같다. 처음에 이런 방식으로 풀었는데 99점이 나왔는데 1점에 대한 감이 안잡혀서 다른 방법으로 풀었다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">주어진 문제를 풀이</code></b><br /></p>
+<p>=) 1) 화학 기호를 보면 중복 되는 부분이 많다. B 와 Br , C 와 Cn 등 첫글자가 겹치는 원소기호들이 존재한다.</p>
+<p>=) 2) 테스트 인풋값은 소문자로 주어진다. 그렇기에 화학 원소기호를 소문자로 변형해서 변수에 저장하는 것이 좋다.</p>
+
+<p><br /><b>2) <code class="highlighter-rouge">이제 정리된 문제를 코딩으로 옮기기</code></b><br /></p>
+<p>=) 1) 저는 ArrayList 를 사용해서 주어진 화학기호를 소문자로 변형시켜서 저장하였습니다. ArrayList 의 Contains 를 사용하고자...</p>
+<p>=) 2) 주어진 글자가 가능한 여부를 True or False 인가를 체크하기 위해 line.length+1 큰 변수를 생성합니다. 초기값은 True</p>
+<p>=) 3) i &gt;= 2, check[i] 에 의미는 이전까지의 글자가 가능여부를 판단하는 것이다.
+<p>=) 3-1) 한글자 체크는 Check 배열의 i-1 까지 True 라면 i-2 까지의 모든 글자는 화학기호라는 의미다. i-1 의 word 가 화학기호로 존재한다면 한글자의 화학기호가 존재한다는 의미이다.</p>
+<p>=) 3-2) 두글자 체크는 Check 배열의 i-2 까지 True 라면 i-3 까지의 모든 글자는 화학기호라는 의미다.이고 i-2 to i-1 의 word 가 화학기호로 존재한다면 두글자의 화학기호가 존재한다는 의미이다.</p>
+<p>=) 3-3) TTTFFT 의 경우는 나올 수 없다. F 가 2번 이상나온다면 그 이후부터는 Check i-1 과 Check i-2 가 F 이기 때문이다. 즉, F가 2번 나오면 그 이후부터는 쭈욱 F다</p>
+<p>=) 3-4) TTTFTT 의 경우는 나올 수 있다. i-1 에서 한글자 체크는 안됬지만 i번째에서 2글자 체크가 되었기 때문이다. </p>
+<p>=) 3-5) F 가 연속으로 2번 나오면 Return 시키면 시간을 단축할 수 있지만 마지막에서 TT...TTF 의 경우가 나올 수 있다. 그러므로 Answer 의 체크를 마지막 값이 False or True 를 비교하면 된다.</p>
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">static</span> <span class="n">int</span> <span class="no">Answer</span><span class="p">;</span>
+
+<span class="n">static</span> <span class="no">ArrayList</span><span class="o">&lt;</span><span class="no">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">new</span> <span class="no">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="n">static</span> <span class="no">String</span> <span class="p">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"H"</span><span class="p">,</span> <span class="s2">"He"</span><span class="p">,</span> <span class="s2">"Li"</span><span class="p">,</span> <span class="s2">"Be"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"N"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="s2">"Ne"</span><span class="p">,</span> <span class="s2">"Na"</span><span class="p">,</span> <span class="s2">"Mg"</span><span class="p">,</span> <span class="s2">"Al"</span><span class="p">,</span>
+  <span class="s2">"Si"</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">,</span> <span class="s2">"S"</span><span class="p">,</span> <span class="s2">"Cl"</span><span class="p">,</span> <span class="s2">"Ar"</span><span class="p">,</span> <span class="s2">"K"</span><span class="p">,</span> <span class="s2">"Ca"</span><span class="p">,</span> <span class="s2">"Sc"</span><span class="p">,</span> <span class="s2">"Ti"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"Cr"</span><span class="p">,</span> <span class="s2">"Mn"</span><span class="p">,</span> <span class="s2">"Fe"</span><span class="p">,</span>
+  <span class="s2">"Co"</span><span class="p">,</span> <span class="s2">"Ni"</span><span class="p">,</span> <span class="s2">"Cu"</span><span class="p">,</span> <span class="s2">"Zn"</span><span class="p">,</span> <span class="s2">"Ga"</span><span class="p">,</span> <span class="s2">"Ge"</span><span class="p">,</span> <span class="s2">"As"</span><span class="p">,</span> <span class="s2">"Se"</span><span class="p">,</span> <span class="s2">"Br"</span><span class="p">,</span> <span class="s2">"Kr"</span><span class="p">,</span> <span class="s2">"Rb"</span><span class="p">,</span> <span class="s2">"Sr"</span><span class="p">,</span>
+  <span class="s2">"Y"</span><span class="p">,</span><span class="s2">"Zr"</span><span class="p">,</span> <span class="s2">"Nb"</span><span class="p">,</span> <span class="s2">"Mo"</span><span class="p">,</span> <span class="s2">"Tc"</span><span class="p">,</span> <span class="s2">"Ru"</span><span class="p">,</span> <span class="s2">"Rh"</span><span class="p">,</span> <span class="s2">"Pd"</span><span class="p">,</span> <span class="s2">"Ag"</span><span class="p">,</span> <span class="s2">"Cd"</span><span class="p">,</span> <span class="s2">"In"</span><span class="p">,</span> <span class="s2">"Sn"</span><span class="p">,</span> <span class="s2">"Sb"</span><span class="p">,</span>
+  <span class="s2">"Te"</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">,</span> <span class="s2">"Xe"</span><span class="p">,</span> <span class="s2">"Cs"</span><span class="p">,</span> <span class="s2">"Ba"</span><span class="p">,</span> <span class="s2">"Hf"</span><span class="p">,</span> <span class="s2">"Ta"</span><span class="p">,</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">"Re"</span><span class="p">,</span> <span class="s2">"Os"</span><span class="p">,</span> <span class="s2">"Ir"</span><span class="p">,</span> <span class="s2">"Pt"</span><span class="p">,</span> <span class="s2">"Au"</span><span class="p">,</span>
+  <span class="s2">"Hg"</span><span class="p">,</span> <span class="s2">"Tl"</span><span class="p">,</span> <span class="s2">"Pb"</span><span class="p">,</span> <span class="s2">"Bi"</span><span class="p">,</span> <span class="s2">"Po"</span><span class="p">,</span> <span class="s2">"At"</span><span class="p">,</span> <span class="s2">"Rn"</span><span class="p">,</span> <span class="s2">"Fr"</span><span class="p">,</span> <span class="s2">"Ra"</span><span class="p">,</span> <span class="s2">"Rf"</span><span class="p">,</span> <span class="s2">"Db"</span><span class="p">,</span> <span class="s2">"Sg"</span><span class="p">,</span>
+  <span class="s2">"Bh"</span><span class="p">,</span> <span class="s2">"Hs"</span><span class="p">,</span> <span class="s2">"Mt"</span><span class="p">,</span> <span class="s2">"Ds"</span><span class="p">,</span> <span class="s2">"Rg"</span><span class="p">,</span> <span class="s2">"Cn"</span><span class="p">,</span> <span class="s2">"Fl"</span><span class="p">,</span> <span class="s2">"Lv"</span><span class="p">,</span> <span class="s2">"La"</span><span class="p">,</span> <span class="s2">"Ce"</span><span class="p">,</span> <span class="s2">"Pr"</span><span class="p">,</span> <span class="s2">"Nd"</span><span class="p">,</span>
+  <span class="s2">"Pm"</span><span class="p">,</span> <span class="s2">"Sm"</span><span class="p">,</span> <span class="s2">"Eu"</span><span class="p">,</span> <span class="s2">"Gd"</span><span class="p">,</span> <span class="s2">"Tb"</span><span class="p">,</span> <span class="s2">"Dy"</span><span class="p">,</span> <span class="s2">"Ho"</span><span class="p">,</span> <span class="s2">"Er"</span><span class="p">,</span> <span class="s2">"Tm"</span><span class="p">,</span> <span class="s2">"Yb"</span><span class="p">,</span> <span class="s2">"Lu"</span><span class="p">,</span> <span class="s2">"Ac"</span><span class="p">,</span>
+  <span class="s2">"Th"</span><span class="p">,</span> <span class="s2">"Pa"</span><span class="p">,</span> <span class="s2">"U"</span><span class="p">,</span> <span class="s2">"Np"</span><span class="p">,</span> <span class="s2">"Pu"</span><span class="p">,</span> <span class="s2">"Am"</span><span class="p">,</span> <span class="s2">"Cm"</span><span class="p">,</span> <span class="s2">"Bk"</span><span class="p">,</span> <span class="s2">"Cf"</span><span class="p">,</span> <span class="s2">"Es"</span><span class="p">,</span> <span class="s2">"Fm"</span><span class="p">,</span> <span class="s2">"Md"</span><span class="p">,</span>
+  <span class="s2">"No"</span><span class="p">,</span> <span class="s2">"Lr"</span>
+<span class="p">};</span>
+
+<span class="kp">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="no">String</span> <span class="n">args</span><span class="p">[])</span> <span class="n">throws</span> <span class="no">Exception</span>	<span class="p">{</span>
+  <span class="no">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">new</span> <span class="no">Scanner</span><span class="p">(</span><span class="no">System</span><span class="p">.</span><span class="nf">in</span><span class="p">);</span>
+
+  <span class="n">listInit</span><span class="p">();</span>
+
+  <span class="n">int</span> <span class="no">T</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">test_case</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">test_case</span> <span class="o">&lt;</span> <span class="no">T</span><span class="p">;</span> <span class="n">test_case</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="no">Answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="no">String</span> <span class="n">line</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">next</span><span class="p">();</span>
+
+    <span class="n">line</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">();</span>
+
+    <span class="n">boolean</span> <span class="p">[]</span> <span class="n">check</span> <span class="o">=</span> <span class="n">new</span> <span class="n">boolean</span><span class="p">[</span><span class="n">line</span><span class="p">.</span><span class="nf">length</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="n">check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span><span class="p">;</span>
+	  <span class="n">check</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">wordCheck</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="s2">""</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">line</span><span class="p">.</span><span class="nf">length</span><span class="p">()</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">check</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span>
+        <span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">wordCheck</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">charAt</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">""</span><span class="p">))</span>
+          <span class="o">||</span> <span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">wordCheck</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">)));</span>
+        <span class="p">}</span>
+
+        <span class="no">System</span><span class="p">.</span><span class="nf">out</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s2">"Case #"</span><span class="o">+</span><span class="p">(</span><span class="n">test_case</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="n">line</span><span class="p">.</span><span class="nf">length</span><span class="p">()])</span> <span class="p">{</span>
+  <span class="no">System</span><span class="p">.</span><span class="nf">out</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s2">"YES"</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="no">System</span><span class="p">.</span><span class="nf">out</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s2">"NO"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kp">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">listInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="no">String</span> <span class="n">val</span> <span class="p">:</span> <span class="n">temp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">val</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kp">public</span> <span class="n">static</span> <span class="n">boolean</span> <span class="n">wordCheck</span><span class="p">(</span><span class="no">String</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">return</span> <span class="kp">true</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">return</span> <span class="kp">false</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+
+`코드그라운드 문제 풀이를 공유하는 것이 문제가 되면 바로 삭제하도록 하겠습니다.`
+</p>
+:ET

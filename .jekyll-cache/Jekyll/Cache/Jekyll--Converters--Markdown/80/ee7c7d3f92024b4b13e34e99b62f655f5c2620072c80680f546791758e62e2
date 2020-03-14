@@ -1,0 +1,62 @@
+I"d!<p><code class="highlighter-rouge">CodeGround 의 프로그래밍 경진대회 풀이에 관한 포스팅입니다.</code> 문제를 제대로 읽지 않으면 원하는 정답을 못 구할 수 있다. 그래서인지 Q&amp;A 가 상당히 많은 문제였다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">주어진 문제를 풀이</code></b><br /></p>
+<p>=) 1) N 사이즈가 주어지면 N, N-1, ... , 1점 까지 점수가 주어진다. 라운드별 동점자는 없지만 종합점수는 동점자가 존재 !!!! 가 가장 큰 힌트</p>
+<p>=) 2) 그래서 구하는 것은 우승 가능성이 있는 응시자 수... 4 4 4 가 테스트 일 경우 3, 2, 1 점을 받으므로 7,6,5 가 된다. 4점의 종합점수를 가진 학생이 3명이다. 즉, 이 3명모두 우승 가능성이 있다. 제가 실수한 부분은 동점자를 한 사람으로 취급해서 제대로 된 결과가 안나왔습니다.</p>
+<p>=) 3) 마지막 점수에서는 동점자가 나와서 공동우승 되는 경우도 체크가 필요 &amp;&amp; 우승 가능성이 있는 응시자수임을 유의해야 함&lt;/b&gt;</p>
+
+<p><br /><b>2) <code class="highlighter-rouge">이제 정리된 문제를 코딩으로 옮기기</code></b><br /></p>
+<p>=) 1) 먼저 Arrays.sort 를 통해 주어진 인풋값을 오름차순으로 정렬&lt;/b&gt;</p>
+<p>=) 2) arr[index] + maxScore &lt; arr[lastIndex] + 1 처음 배열의 값과 최대점수를 받았을 때 이전 종합점수에서 가장 높은 합을 받은 사람이 최저점을 받은 것보다 작으면 이 친구는 우승할 가능성이 제로이므로 배제해야 함</p>
+<p>=) 3) 만약 크다면, 마지막 인덱스에서 해당 인덱스까지 1점, 2점, 3점 ...... N-1 점까지 다 더한게 arr[index] + maxScore 보다 크면 True 를 리턴, 그렇지 않다면 Flase 를 리턴하고 break. </p>
+<p>=) 4) Answer = ArraySize - foundIndex 가 된다 </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+<span class="n">int</span> <span class="p">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+  <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+  <span class="no">Arrays</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+
+  <span class="n">int</span> <span class="n">foundIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="n">continue</span><span class="p">;</span>
+
+    <span class="n">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">foundIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="no">Answer</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="n">foundIndex</span><span class="p">;</span>
+
+<span class="no">System</span><span class="p">.</span><span class="nf">out</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s2">"Case #"</span><span class="o">+</span><span class="p">(</span><span class="n">test_case</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="no">System</span><span class="p">.</span><span class="nf">out</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="no">Answer</span><span class="p">);</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="kp">public</span> <span class="n">static</span> <span class="n">boolean</span> <span class="n">check</span><span class="p">(</span><span class="n">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="n">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">boolean</span> <span class="n">isCheck</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">index</span> <span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">int</span> <span class="n">last</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">temp</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">first</span> <span class="o">&gt;=</span> <span class="n">last</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">isCheck</span> <span class="o">=</span> <span class="kp">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">isCheck</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">isCheck</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">코드그라운드 문제 풀이를 공유하는 것이 문제가 되면 바로 삭제하도록 하겠습니다. 풀이에 대해 이해가 안되는 것은 메일을 통해 전달 부탁드립니다. 그게 제일 빨라요</code></p>
+:ET

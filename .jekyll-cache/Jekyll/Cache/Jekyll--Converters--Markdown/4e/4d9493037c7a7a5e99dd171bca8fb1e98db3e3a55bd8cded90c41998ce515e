@@ -1,0 +1,80 @@
+I"q,<p><code class="highlighter-rouge">CodeGround 의 김씨만 행복한 세상 풀이에 관한 포스팅입니다.</code> 인접한 두 지점이 같은 색깔로 칠해지지 않아야 행복한 세상이 되는 문제입니다. 즉, 인접한 지점이 같은 색이면 0 을 출력 그렇지 않으면 1을 출력하는 문제입니다.</p>
+
+<p><br /><b>1) <code class="highlighter-rouge">주어진 문제를 풀이</code></b><br /></p>
+<p>=) 1) 주어진 인풋값을 오름차순으로 정리해야 합니다. (아래의 코딩에는 없음) </p>
+<p>=) 2) 1 - 2 과 나오면 1 에는 0 을 할당, 2에는 1을 할당</p>
+<p>=) 2-1) 2 - 3 이 나오면 2 에는 1 이 할당되어 있으므로 3에는 0을 할당</p>
+<p>=) 2-2) 위의 과정을 반복하다가 마지막까지 인접한 지점의 값이 다르면 김씨가 행복한 세상이 된다.</p>
+
+<p><br /><b>2) <code class="highlighter-rouge">이제 정리된 문제를 코딩으로 옮기기</code></b><br /></p>
+<p>=) 1) 주어진 인풋값을 오름차순으로 정리 </p>
+<p>=) 2) 0 과 1을 할당하면서 같은 값이 나오는지를 판단</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">new</span> <span class="no">Scanner</span><span class="p">(</span><span class="no">System</span><span class="p">.</span><span class="nf">in</span><span class="p">);</span>
+
+<span class="n">int</span> <span class="no">T</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">test_case</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">test_case</span> <span class="o">&lt;</span> <span class="no">T</span><span class="p">;</span> <span class="n">test_case</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="no">Answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="no">ArrayList</span><span class="o">&lt;</span><span class="no">Pass</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">new</span> <span class="no">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+  <span class="n">int</span> <span class="n">numTown</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+  <span class="n">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+  <span class="n">int</span> <span class="p">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">[</span><span class="n">numTown</span><span class="p">];</span>
+
+  <span class="no">Arrays</span><span class="p">.</span><span class="nf">fill</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">count</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+    <span class="n">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="nf">nextInt</span><span class="p">();</span>
+
+    <span class="n">list</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">new</span> <span class="no">Pass</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="no">Pass</span> <span class="n">a</span> <span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">s</span><span class="p">;</span>
+    <span class="n">int</span> <span class="n">e</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">e</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+
+      <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+      <span class="n">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+
+      <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="no">Answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Pass</span> <span class="p">{</span>
+  <span class="n">int</span> <span class="n">s</span><span class="p">;</span>
+  <span class="n">int</span> <span class="n">e</span><span class="p">;</span>
+
+  <span class="kp">public</span> <span class="no">Pass</span><span class="p">(</span><span class="n">int</span> <span class="n">s</span><span class="p">,</span> <span class="n">int</span> <span class="n">e</span><span class="p">){</span>
+    <span class="n">this</span><span class="p">.</span><span class="nf">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">this</span><span class="p">.</span><span class="nf">e</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">코드그라운드 문제 풀이를 공유하는 것이 문제가 되면 바로 삭제하도록 하겠습니다. 풀이에 대해 이해가 안되는 것은 메일을 통해 전달 부탁드립니다. 그게 제일 빨라요</code></p>
+:ET
