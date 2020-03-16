@@ -1,0 +1,7 @@
+- name: LOL & TFT
+  percentage: 99
+  color: info
+
+- name: PUBG
+  percentage: 99
+  color: success
