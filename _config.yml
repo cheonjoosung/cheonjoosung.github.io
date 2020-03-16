@@ -1,42 +1,70 @@
-# Site settings
-title: Joo's IT Blog
-email: cjswntjd@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  This is for recording IT, food and my story!
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://cheonjoosung.github.io" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
+### Site Settings ###
+title               : JOO
+description         : >-
+                      "BELIEVE IN YOURSELF,<br>then...<br>ANYTHING IS POSSIBLE!"
+baseurl             : #/portfolYOU"                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+repository          : cheonjoosung.github.io/portfolYOU     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+remote_theme        : YoussefRaafatNasry/portfolYOU
 
-favicon: "favicon.ico"
 
-github_username:  cheonjoosung
-# google_play: 'GDGX'
-# google_plus_com: '109485346959707049693'  # Community link
-# google_plus_per: '+GDGManagua'  #Personal link
-# facebook_app_id: 12345
+### Plugins ###
+plugins:
+  - jemoji
 
-# Layout settings
-header_type: default  # values [ drawer, default ]
-post_type: highlight    # values [ highlight, default ]
-pagination_type: default  # values [ ops, default ]
 
-more_vert:
-  option1:
-    name: Theme Source(Material)
-    link: https://github.com/gdg-managua/jekyll-mdl
-  # option2:
-  #  name: Cool Option 2
-  #  link: www.myawesomelink.com
-  # option3:
-  #  name: Cool Option 3
-  #  link: www.myawesomelink.com
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
 
-disqus: true
-disqus_shortname: 'Joo'
 
-# Build settings
-markdown: kramdown
+### Author Info ###
+author:
+  name              : JooSung Cheon
+  image             : https://t1.daumcdn.net/cfile/tistory/2701A5465798B6250D
+# behance           : your_username
+# dribbble          : your_username
+  email             : cjswntjd@gmail.com
+# facebook          : your_username
+  github            : https://github.com/cheonjoosung
+# gitlab            : your_username
+# instagram         : your_username
+# linkedin          : your_username
+# medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+# twitter           : your_username
+# vimeo             : your_username
+# youtube           : your_channel_name
 
-# For generating sitemaps
-gems:
-  - jekyll-sitemap
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+
+
+### Exclude from processing ###
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"
