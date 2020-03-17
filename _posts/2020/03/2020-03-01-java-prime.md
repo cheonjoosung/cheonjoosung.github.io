@@ -4,6 +4,9 @@ tags: [자바, 손코딩]
 style: fill
 color: dark
 description: 자바의 소수를 효율적이고 최적으로 구하는 방법. 자바 손코딩 
+sitemap :
+  changefreq : daily
+  priority : 1.0
 ---
 
 ## 소수란 ?
