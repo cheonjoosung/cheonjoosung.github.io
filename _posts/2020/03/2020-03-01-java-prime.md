@@ -3,10 +3,7 @@ title: 자바 소수 구하기 실행시간 단축 알고리즘 Java PrimeNumber
 tags: [자바, 손코딩]
 style: fill
 color: dark
-description: 자바의 소수를 효율적이고 최적으로 구하는 방법. 자바 손코딩 
-sitemap :
-  changefreq : daily
-  priority : 1.0
+description: 자바의 소수를 효율적이고 최적으로 구하는 방법. 자바 손코딩
 ---
 
 ## 소수란 ?
