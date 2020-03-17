@@ -36,7 +36,7 @@ int binarySearch(int [] arr, int key, int left, int right) {
 **전달받은 배열이 정렬되었는지 체크와 키 값의 범위를 체크하는 예외처리를 추가**했다. 찾고자 하는 값을 배열의 중간값과 비교하면서 대소여부에 따라 배열의 범위를 다르게 분할하면서 원하는 인덱스 값을 찾을 수 있다.
 
 ## 이진검색 버전 2 - 반복문
-메모이제이션 기법을 활용하여 피보나치 수열의 코드를 구현해 보자.
+반복문을 활용하여 이진검색 코드를 구현해 보자.
 
 ```javascript
 int binarySearch(int [] arr, int key, int low, int high) {
