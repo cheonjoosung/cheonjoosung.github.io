@@ -1,5 +1,5 @@
 ---
-title: 자바 약수 구하기 최적의 알고리즘 Java Divisor Algorithm
+title: 자바 약수 구하기 실행시간 단축 알고리즘 Java Divisor Algorithm
 tags: [자바, 손코딩]
 style: fill
 color: dark
