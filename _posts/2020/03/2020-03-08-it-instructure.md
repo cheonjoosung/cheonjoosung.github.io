@@ -1,0 +1,46 @@
+---
+title: IT 강의 및 교육 사이트 모음
+tags: [IT, 꿀팁]
+style: fill
+color: dark
+description: IT(모바일, 웹, DB, 빅데이터 등)의 교육을 유료 또는 무료로 수강할 수 있는 사이트
+---
+
+## IT 강의 사이트 1 : [인프런](https://www.inflearn.com/)
+![alt text](https://cdn.inflearn.com/wp-content/uploads/inf_main_img2.png)
+- 최근 **포인트 제도**가 도입되었음. 후기 및 질문 등 다양한 활동에 따라 포인트가 주어지고 이를 강의에 활용할 수 있음
+- IT 프로그래밍/사무처리(MS Offict)/기획 및프로젝트 관리/자기 계발/크레이티브 강의(포토샵, 편집, 그래픽, 디자인) 등 **다양하고 많은 강의**가 있음
+- 다른 수강자들의 **개발 로드맵을 참고**하여 수강하면서 프로세스를 따라갈 수 있는 커뮤니티 존재
+- 자신이 가지고 있는 재능을 바탕으로 강사 신청 가능
+- **모바일 앱**으로 강의 시청 가능(안드로이드만 존재하는 것 같음)
+
+
+## IT 강의 사이트 2 : [프로그래머스](https://programmers.co.kr/learn/)
+![alt text](https://programmers.co.kr/assets/img-meta-programmers-e00862a7c9acd8ef5164f8c85b3ab0127d083ab59b3a98d7219690bd3570bf35.png)
+- 프로그래머스는 IT와 관련된 강의만 존재한다. 
+- 강의 챕터가 끝날때 마다 코딩/문법 **테스트를 할 수 있는 서비스를 통해 복습** 가능
+- 강의 뿐만 아니라 개발 언어와 관련된 코팅 테스트를 통해 학습 효과 가능함.
+- 최근 **많은 기업에서 프로그래머스를 활용하여 코딩 테스트를 진행**하거나 이 사이트를 통해 **개발자 과제를 주고 채용을 진행**하기도 함
+
+
+## IT 강의 사이트 3 : [유데미](https://www.udemy.com/)
+![alt text](https://udemy.bloter.net/wp-content/themes/bloter-campus-theme/assets/images/udemy/udemy_ci_v2.png)
+- 이 포스트에서 언급하는 **타 사이트에 비해 다양하고 많은 강의**가 존재한다. IT 뿐만 아니라 라이프, 디지털, 사무 생산성 등 많다... 
+- 이용자에게 **몇 가지 질문을 바탕으로 추천 강의 목록을 제공**해준다.
+- **모바일 앱**으로 강의 시청 가능(안드로이드 or iOS)
+- 자신이 가지고 있는 재능을 바탕으로 강사 신청 가능
+
+
+## IT 강의 사이트 4 : [노마드코더](https://academy.nomadcoders.co/)
+![alt text](https://www.filepicker.io/api/file/Tu60vRVBQGablw9OAOZz)
+- 강의 사이트보다는 [유투버](https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ)로 유명하다 
+- IT 프로그래밍 강의가 존재하나 자바스크립트(웹/백엔드)로 한정적임. 다른 사이트에 비해 강의가 적은 편임
+
+
+## IT 강의 사이트 5 : [생활코딩](https://opentutorials.org/course/1)
+![alt text](https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png)
+- IT 프로그래밍과 관련된 다양한 강의 존재 웹, DB, 개발 언어, 서버, 도구 등에 광범위하게 강의 제공
+- 강의 + 설명 글로 이루어져 있음
+
+## 결론
+- **가장 유능한 사람은 배움에 힘쓰는 사람이다** by 괴테
