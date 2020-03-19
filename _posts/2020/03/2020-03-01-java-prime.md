@@ -1,5 +1,5 @@
 ---
-title: 자바 소수 구하기 실행시간 단축 알고리즘 Java PrimeNumber Algorithm
+title: 자바 소수 구하기 실행시간 단축 알고리즘
 tags: [자바, 손코딩]
 style: fill
 color: dark
