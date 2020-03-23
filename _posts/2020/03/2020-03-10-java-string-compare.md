@@ -1,5 +1,5 @@
 ---
-title: 자바 String vs StringBuidler vs StringBuffer 비교
+title: 자바 String vs StringBuilder vs StringBuffer 비교
 tags: [Java]
 style: fill
 color: dark
