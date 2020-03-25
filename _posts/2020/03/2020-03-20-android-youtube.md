@@ -1,12 +1,12 @@
 ---
-title: 안드로이드 유투브 API 연동하기
+title: 안드로이드 Youtube API 연동하기 + youtube 샘플 앱
 tags: [Android]
 style: fill
 color: dark
 description: 안드로이드에서 youtube API 연동하여 동영상 시청하는 샘플 코드 
 ---
 
-## 유투브 API 연동하기
+## Youtube API 연동하기
 
 **1단계 안드로이드 샘플 프로젝트 만들기**
 - 안드로이드 스튜디오를 실행시킨 후에 Empty 테마를 사용하여 새로운 프로젝트를 만듭니다.
@@ -16,9 +16,9 @@ description: 안드로이드에서 youtube API 연동하여 동영상 시청하�
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-**2단계 유투브 API 연동을 파일 다운로드**
-- [유투브 API 다운로드 사이트](https://developers.google.com/youtube/android/player/downloads?hl=ko)
-- 안드로이드 스튜디오에서는 gradle를 이용하여 import를 하지만 유투브 API가 아직도 이클립스 기준으로 설정되어 있기 때문에 불편함. 자체적으로 제공하는 플레이어도 불편하고 구린편
+**2단계 Youtube API 연동을 파일 다운로드**
+- [youtube API 다운로드 사이트](https://developers.google.com/youtube/android/player/downloads?hl=ko)
+- 안드로이드 스튜디오에서는 gradle를 이용하여 import를 하지만 youtube API가 아직도 이클립스 기준으로 설정되어 있기 때문에 불편함. 자체적으로 제공하는 플레이어도 불편하고 구린편
 
 **3단계 종속성 추가**
 - 다운로드 한 zip파일의 압축을 풀면 샘플 코드가 있습니다. 그 중에서 libs 폴더에 `YouTubeAndroidPlayerApi.jar`파일을 복사하여 안드로이드 스튜디오 프로젝트의 app/libs/ 에 붙여넣기
