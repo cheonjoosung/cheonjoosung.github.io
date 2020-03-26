@@ -33,23 +33,18 @@ buildTypes {
 }
 ```
 - gradle sync now 클릭하여 동기화 진행
-- **주의 사항** buildConfigField를 사용할 때 \"value\" 
+- **주의 사항** buildConfigField를 사용할 때 큰 따음표 " 와 \를 이용해서 값 할당
 
 **2단계 : 설정값 불러오기**
 - gradle에서 동기화된 파일이 생성되어서 BuilfConfig 파일에 저장되어 값을 불러오거나 getString을 통해서 값을 가져올 수 있다.
 ```javascript
 Log.i("KEY_TEST", BuildConfig.BUILD_TIME);
 Log.i("KEY_TEST", getString(R.string.build_time));
-
-/*
-디버그 모드라면 로그에 debug_key 와 debug_key2가 출력
-릴리즈 모드라면 로그에 API-KEY 와 API-KEY_2가 출력
-*/
 ```
-- 디버그 모드라면 debug_key값을 사용하고 릴리즈 모드라면 api-key 값을 자동적으로 사용함
+- 디버그 모드라면 debug_key 값을 사용하고 릴리즈 모드라면 api-key 값을 자동적으로 사용할 수 있다.
 
 **참고자료**
-- [구글 gradle](https://developer.android.com/studio/build/gradle-tips?hl=ko)]
+- [구글 gradle](https://developer.android.com/studio/build/gradle-tips?hl=ko) 공식문서 참조
 
 ## 결론
 - **키 값 활용뿐만 아니라 gradle 에서 빌드모드에 따라 다양한 설정에 대한 배움이 필요하다.**
