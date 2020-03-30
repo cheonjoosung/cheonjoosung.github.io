@@ -30,6 +30,7 @@ Collection Framework는 데이터를 위한 자료 구조 및 알고리즘을 �
 ## Collection Framework의 주요 인터페이스
 **1.List**;
 - ArrayList, Vector : 순서가 있는 자료구조형으로 비슷. 벡터는 현재 기존 코드와의 호환성을 위해서 존재하므로 ArrayList를 추천
+
 ```javascript
 List<Integer> list = new ArrayList<>()
 list.add(1) list.add(2) list.add(3)
@@ -43,6 +44,7 @@ list.remove(1);
 ```
 
 - LinkedList : 저장방식이 다름. 내부의 포인터를 통해 연결.
+
 ```javascript
 LinkedList<Integer> list = new LinkedList<>();
 list.add(4) list.add(2) list.add(3)
@@ -53,6 +55,7 @@ list.set(0, 4)
 ```
 
 - Stack : First In Last Out의 자료구조형
+
 ```javascript
 Stack<Integer> s = new Stack<>();
 
@@ -64,6 +67,7 @@ if(!s.isEmpty()) s.pop();
 ```
 
 - Queue : First In First Out의 자료구조형
+
 ```javascript
 Queue<Integer> s = new LinkedList();
 
@@ -78,6 +82,7 @@ while(!s.isEmpty()) {
 
 **2.Set**
 - HashSet : 순서에 상관없이 저장하고 중복된 값은 저장하지 않는다. 순서가 필요하다면 LinkedHashSet 사용
+
 ```javascript
 HashSet<String> hs = new HashSet<>();
 
@@ -93,6 +98,7 @@ while (it.hasNext()) {
 ```
 
 - TreeSet : 데이터가 정렬된 상태로 저장되고 이진 검색 트리의 형태가 된다
+
 ```javascript
 TreeSet<Integer> ts = new TreeSet<>();
 
@@ -111,6 +117,7 @@ while (it.hasNext()) {
 - HashMap<> : 중복된 키로 저장 불가
 - Hashtable<> : HashMap과 같은 동작을 함. HashMap 사용 권장
 - TreeMap<> : 이진 검색 트리의 형태로 저장하기에 추가/제거 등의 동작이 빠름
+
 ```javascript
 HashMap<String, Integer> hm = new HashMap<>();
 
