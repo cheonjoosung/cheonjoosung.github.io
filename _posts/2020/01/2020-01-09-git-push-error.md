@@ -1,5 +1,5 @@
 ---
-title: Git/Github requested URL returned Error 403 해결방법
+title: Git requested URL returned Error 403 해결방법
 tags: [git]
 style: fill
 color: dark

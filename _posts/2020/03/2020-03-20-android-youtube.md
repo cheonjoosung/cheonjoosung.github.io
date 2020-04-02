@@ -34,6 +34,7 @@ description: 안드로이드에서 youtube API 연동하여 동영상 시청하�
 
 **5단계 화면 및 코드 작성**
 - activity_main.xml 레이아웃에 `YouTubePlayerView` 의 뷰와 버튼 하나 만들기
+
 ```javascript
 <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtubeView"
@@ -54,7 +55,9 @@ description: 안드로이드에서 youtube API 연동하여 동영상 시청하�
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 ```
+
 - MainAcitiy 파일에 아래의 코드 추가하는데 **유투브 extends YoutubebaseActivity 반드시 필요**
+
 ```javascript
 public class MainActivity extends YouTubeBaseActivity {
     YouTubePlayerView youTubePlayerView;
