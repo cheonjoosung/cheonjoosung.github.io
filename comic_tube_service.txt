@@ -1,0 +1,8 @@
+1. Personal Information
+This app does not require any personal information.(ex: name, address, phone-number, uuid etc)
+
+2. Advertisement
+All Advertisement are on Google's AdMob network.
+
+3. realm-android
+It is mobile db for saving youtube video data.

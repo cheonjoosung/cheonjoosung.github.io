@@ -1,0 +1,9 @@
+1. Personal Information
+This app does not require any personal information.(ex: name, address, phone-number, uuid etc)
+
+2. Advertisement
+All Advertisement are on Google's AdMob network.
+
+3. Firebase Crshlytics
+It is for Crash or Error in mobile app.
+Google Crashlytics : https://firebase.google.com/terms/crashlytics?hl=ko
