@@ -6,3 +6,6 @@ All Advertisement are on Google's AdMob network.
 
 3. realm-android
 It is mobile db for saving youtube video data.
+
+4. android.permission.Internet
+Only use for playing video with youtube player api.
