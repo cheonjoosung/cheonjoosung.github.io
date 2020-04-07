@@ -1,6 +1,6 @@
 ---
 title: 안드로이드 Youtube API 연동하기 + youtube 샘플 앱
-tags: [Android]
+tags: [Android, Youtube]
 style: fill
 color: dark
 description: 안드로이드에서 youtube API 연동하여 동영상 시청하는 샘플 코드 
