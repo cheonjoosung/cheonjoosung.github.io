@@ -9,3 +9,7 @@ It is mobile db for saving youtube video data.
 
 4. android.permission.Internet
 Only use for playing video with youtube player api.
+
+5. Firebase Crshlytics
+It is for Crash or Error in mobile app.
+Google Crashlytics : https://firebase.google.com/terms/crashlytics?hl=ko
