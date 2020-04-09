@@ -87,7 +87,7 @@ public class MainActivity extends YouTubeBaseActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayerView.initialize("개발자 콘솔에서 만든 api키", listener);
+                youTubePlayerView.initialize("아무키", listener);
 
             }
         });
@@ -97,10 +97,10 @@ public class MainActivity extends YouTubeBaseActivity {
 - 버튼을 클릭하면 api키를 바탕으로 요청하고 listener 동작
 - loadVideo(유투브 영상 키값)을 통해서 불러오면 끝
 
-
-
 **6단계 실행후 테스트**
 - [동빈나님의 유투브](https://www.youtube.com/watch?v=vewH-f3fAes)를 참고해서 만들었고 안드로이드 스튜디오 버전/구글 콘솔은 이전버전이기에 최신 버전에 맞춰서 포스트를 작성했습니다. ()
+
+**추가사항 2020-04-09** youtube api key 는 data api v3 를 위한 용도로 유투브 영상을 실행하는 YoutubePlaerView 와는 상관이 없습니다. [공식문서](https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerView?hl=ko) 그렇기에 youtubePlaerview.init("아무키나 입력해도 다 됩니다", );
 
 
 ## 결론

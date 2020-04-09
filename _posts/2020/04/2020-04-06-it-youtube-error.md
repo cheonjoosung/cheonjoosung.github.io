@@ -14,6 +14,8 @@ Youtube Data API를 사용하기 위해서는 API 키를 생성하고 사용자 
 ![preview](https://i.imgur.com/RuGPUOn.png)
 위의 사진처럼 **애플리케이션 제한사항 - 없음** / API 제한사항 키 제한 API 1개 로 변경한 후 Youtube Data API를 조회했을 때 정상적으로 원하는 값을 얻을 수 있었다.
 
+**추가사항** 반영되는 시간이 오래걸려서 일수도 있으니 천천히 시간을 가진후에 다시 시도하시는 것을 추천드립니다.
+
 ## quotaExceeded
 **Youtube Data API 할당량은 하루 10,000**으로 정해져있다. 할당량이 초과되면 Youtube Data API를 요청해도 quotaExceeded 를 반환한다.
 
