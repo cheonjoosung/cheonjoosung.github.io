@@ -5,10 +5,9 @@ image: https://lh3.googleusercontent.com/gNXi7K6vqvK_Pwzm0_q_T8a8rkk2Cy5Lm8U9Tok
 description: Youtube Data API 를 활용한 예능 튜브 - 하이라이트 몰아보기
 ---
 
-## 오늘 할일
-- 오늘의 해야할 일을 포스트 잇처럼 메모로 적고 관리하는 앱
+## 예능 튜브
+- 유투브의 API를 활용하여 예능 하이라이트를 모아서 볼 수 있는 앱
 - [구글 플레이스토어 주소](https://play.google.com/store/apps/details?id=com.js.kcomictube)
-
 
 ## Period
 - 1인 프로젝트
