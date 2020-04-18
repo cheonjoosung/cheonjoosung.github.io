@@ -1,9 +1,9 @@
 ---
-title: 백준 17779번 게리멘더링 2 Java/자바 - 2019 삼성 SW 역량테스트 기출문제
+title: 백준 17779번 게리맨더링 2 Java/자바 - 2019 삼성 SW 역량테스트 기출문제
 tags: [알고리즘, 백준]
 style: fill
 color: dark
-description: 백준 bfs + simulation - 게리멘더링 2 2019 삼성 SW 역량테스트 기출문제
+description: 백준 bfs + simulation - 게리맨더링 2 2019 삼성 SW 역량테스트 기출문제
 ---
 
 ## [문제](https://www.acmicpc.net/problem/17779)
