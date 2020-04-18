@@ -1,12 +1,12 @@
 ---
-title: Android Youtube Data API v3 사용법 - 영상 리스트 검색하기
+title: Android Youtube Data API v3 사용법 - 영상 검색하기
 tags: [Android, Youtube]
 style: fill
 color: dark
 description: 안드로이드에서 youtube data API 를 활용하여 검색하고 정보를 가져오는 방법
 ---
 
-## Youtube Data API로 영상 리스트 검색하고 가져오기
+## Youtube Data API로 영상 검색하고 가져오기
 유튜브 영상의 정보를 가져오는 방법이 2개가 존재한다. 하나는 oAuth를 통한 인증방법이고 다른 하나는 API키를 활용한 인증방법이다. 이 포스트에서는 API키를 통한 샘플 코드이다. 하지만 API키를 활용하면 앱으로 배포했을 때 노출이 되므로 위험하니 키 제한이 필요하고 클라이언트 단보다는 서버 단 로직에서 실행해야 키 자체가 노출이 안된다. 클라이언트 단에서 만들고 싶으면 oauth 사용을 권장합니다.
 
 
