@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
 - 기존의 http을 활용하여 접근하는 방식이 아니라 구글에서 만든 https, json 등의 통신방식 활용
 - Youtube.search.List는 유투브의 data api 중 검색 이용. Youtube.videos.List 비디오 정보 등 [Youtube Data API 형식](https://developers.google.com/youtube/v3/docs/search/list?hl=ko)의 사이트를 참조하면 된다.
 - 각 API마다 필수사항이 있지만 검색에서는 part(id, snippet) 가 필수 매배변수로 어떤 정보에 대한 요청을 할 건지 명시 필요
-- 선택 매개변수로 채널값, 검색 쿼리, 타입, 정렬순(최신 또는 관련순), setFields()를 통해 어떠한 데이터 정하기... 모든 데이터를 다 가져오려고 하면 하루 할당량 10,000 초과가 발생할 수 있으므로 필요한 정보만 거져오는게 좋다. [초과량 확인 방법](issue-youtube-error)
+- 선택 매개변수로 채널값, 검색 쿼리, 타입, 정렬순(최신 또는 관련순), setFields()를 통해 어떠한 데이터 정하기... 모든 데이터를 다 가져오려고 하면 하루 할당량 10,000 초과가 발생할 수 있으므로 필요한 정보만 거져오는게 좋다. [초과량 확인 방법](it-youtube-error)
 
 **6단계 실행후 테스트**
 - [YOutube Dat API 공식문서](https://developers.google.com/youtube/v3/quickstart/android)를 참고해서 만들었고 안드로이드 스튜디오 버전/구글 콘솔은 최신 버전에 맞춰서 포스트를 작성했습니다.
