@@ -1,6 +1,6 @@
 ---
 title: Youtube Data API "Getting Error 403 forbidden" or "quotaExceeded"
-tags: [It, Youtube]
+tags: [Issue, Youtube]
 style: fill
 color: dark
 description: Youtube Data API 를 사용하면서 발생할 수 있는 오류 문제
