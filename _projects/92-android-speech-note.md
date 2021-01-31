@@ -1,44 +1,48 @@
 ---
-name: Youtube Data API 를 활용한 예능 튜브 - 하이라이트 몰아보기
-tools: [Java, Android, Friebase, Realm]
-image: https://lh3.googleusercontent.com/gNXi7K6vqvK_Pwzm0_q_T8a8rkk2Cy5Lm8U9Tok6Bz1gtNNcJqce1brAeaFI2gA0JzF9=s360-rw
-description: Youtube Data API 를 활용한 예능 튜브 - 하이라이트 몰아보기
+name: 코틀린 STT(Speech To Text) 기능을 활용한 Speech Note
+tools: [Kotlin, Android]
+image: https://play-lh.googleusercontent.com/u0I2iQGWyw0yyZGDRcB7frx_O-utiXxWhvRlFyio2vRatcs8ID9YRFsOi1s3YP92QMk=s360-rw
+description: 구글 SpeechRecognizer를 활용하여 음성을 녹음하고 실시간으로 텍스트로 변환하는 모바일 서비스
 ---
 
-## 예능 튜브
-- 유투브의 API를 활용하여 예능 하이라이트를 모아서 볼 수 있는 앱
-- [구글 플레이스토어 주소](https://play.google.com/store/apps/details?id=com.js.kcomictube)
+## Speech Note
+- 음성을 인식한 후 실시간으로 텍스트로 변환하여 보여주고 녹음 기능을 가진 모바일 앱
+- [구글 플레이스토어 주소](https://play.google.com/store/apps/details?id=kr.co.js.meetstt)
 
 ## Period
 - 1인 프로젝트
-- 2020.03 ~ 2020.04.20
+- 2021.01.01 ~ 2021.01.31
 
 ## Dev.
 **개발 환경**
-- Android Studio 3.4.2(target 28 min 17)
+- Android Studio 4.1.1(target 30 min 16)
 - LG v40
-- Firebase 5.3.0(Crashlytics, Ads)
-- Realm 3.5.0
-- Youtube Data API v3
+- Google Speech Recognier
+- Kotlin 1.4.21
+- UI 라이브러리(Lottie, angads/toggle, afollestad/dialog)
 
 **구현된 기능**
-- 유투브 영상 가져오는 별도의 관리자 앱 개발
-- 예능 하이라이트 영상 요일별 보기, 즐겨찾기 기능, 검색 기능 제공
-- 리뷰 남기기 & 공유 기능
+- 구글 인식 라이브러리를 활용하여 실시간으로 텍스트로 변환하고 화면에 보여줌
+- 음성 녹음 기능
+- 파일 정보/삭제/수정 및 공유 가능
+- 텍스트 파일에 타임라인 정보 추가
 
 **예정 기능**
-- 영상 스킵 기능
-- 설정 추가(관련 영상 몰아보기, 랜덤으로 시청하기, 정렬)
+- 클라우드를 활용한 화자분리 기능
 
-
-**흐름도**
-![preview](https://i.imgur.com/9XwBSir.png)
-
-**스크린샷**
-![preview](https://i.imgur.com/iSv9Dqa.png)
+**스크린샷(슬라이드)**
+{% capture carousel_images %}
+https://play-lh.googleusercontent.com/x8RonpXh5qinHwUY0YefmPKJJ1uxfcUfvmTIRW3xE17Aa4RR_0t5L1xVPVt_70U-KP4=w2292-h2084-rw
+https://play-lh.googleusercontent.com/E3OpiEaS7N6XojE9Y9tUZQ9BtZ4O9OASuTssIGLOXnQm518wP7mNkINK8gzSKKG0UQ=w2292-h2084-rw
+https://play-lh.googleusercontent.com/jRKulbetIUxRhvQ57xxzfmgMsjnz8RJsi5yyVIwf9csn1mbGhxLd0HUDOdB-eOrnig=w2292-h2084-rw
+https://play-lh.googleusercontent.com/yHeWnTwrZk4yiUOyo9nKU9WgNfMfweovnsxydqo0JldfsOj888UKR27GblV1UiWtMg=w2292-h2084-rw
+https://play-lh.googleusercontent.com/1n85HfQrAmLHg7dBymshJjQhMavSIwveGztgHqg5_h9nS9CYm4fJZkMBVQiN3ZJ5Q3IV=w2292-h2084-rw
+https://play-lh.googleusercontent.com/X7nkzr6Umu6yDNAeXB3hj_-e7HZLyi4GSCHm3Pom5cRZ67PgNgkmXC-eCfIeIMnXDv0_=w2292-h2084-rw
+{% endcapture %}
+{% include elements/carousel.html %}
 
 
 ## Result & Learned
-- Realm DB, Firebase 에 대한 이해도 및 활용법을 더 향상시킬 수 있었음
-- Youtube Data API v3 사용하는 과정이 조금 까다로워서 시행착오를 많이 겪었음... 그런데도 재미있었다.
-- 다음엔 AI 나 새로운 트렌드를 활용해서 앱을 만들어 보고 싶다.
+- 코틀린으로 개발을 해보니 자바 기반의 안드로이드보다 코드 생산성이 늘어나고 널타입 안정성이 늘어나서 좋음
+- Lottie 라이브러리를 적용하는 것이 쉬웠고 앱에 생동감을 불어넣어줄 수 있는 점이 좋았음
+- 코루틴을 처음 사용해보았는데 자바의 쓰레드나 비동기처리보다 훨씬 쉬워서 놀랐음.... 킹틀린 ㅇㅈ?
