@@ -1,11 +1,11 @@
 - name: Java/Android
-  percentage: 75
+  percentage: 60
+  color: dark
+
+- name: Kotlin/Android
+  percentage: 70
   color: danger
 
 - name: iOS
   percentage: 17
-  color:
-
-- name: JS
-  percentage: 14
-  color: dark
+  color: 
