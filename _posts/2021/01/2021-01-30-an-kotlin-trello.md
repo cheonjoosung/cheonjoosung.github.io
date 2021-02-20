@@ -201,6 +201,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("Trello", response.body.toString())
     }
 }
+
 ```
 
 - [트렐로 REST API](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/) 에 위의 코드 3가지 이외에도 다양한 코드가 있으므로 필요에 따라 바꾸면 됩니다.
