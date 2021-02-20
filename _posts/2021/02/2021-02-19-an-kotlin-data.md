@@ -1,5 +1,5 @@
 ---
-title: (안드로이드/코틀린) Activity 와 Fragment 사이 데이터 전달 및 통신방법
+title: (안드로이드/코틀린) Activity 와 Fragment 사이에서 데이터 전달 및 통신방법
 tags: [Android, Kotlin]
 style: fill
 color: dark
