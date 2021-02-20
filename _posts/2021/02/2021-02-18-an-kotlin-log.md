@@ -1,5 +1,5 @@
 ---
-title: 안드로이드 릴리즈/디버그 모드 나누기
+title: [안드로이드,코틀린] 로그 릴리즈/디버그 모드 나누기
 tags: [Android, Kotlin]
 style: fill
 color: dark
