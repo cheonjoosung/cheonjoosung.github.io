@@ -29,7 +29,7 @@ description: 안드로이드에서 Trello(트렐로) API 를 활용하여 보드
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-- Gradle 에 아래의 코드를 추가해주세요 
+- Gradle 에 아래의 코드를 추가해주세요
 
 ```javascript
 apply plugin: 'com.android.application'
@@ -201,8 +201,8 @@ class MainActivity : AppCompatActivity() {
         Log.e("Trello", response.body.toString())
     }
 }
-
 ```
+
 - [트렐로 REST API](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/) 에 위의 코드 3가지 이외에도 다양한 코드가 있으므로 필요에 따라 바꾸면 됩니다.
 - [코루틴 활용법](https://developer.android.com/kotlin/coroutines?hl=ko) 에서 정확한 문법을 확인할 수 있습니다. 위에서 구현한 코드는 자바에서 Thread().run 과 유사하면서 확실히 쉽게 비동기 코드를 구현할 수 있습니다.
 - ? 는 해당 객체가 널일경우 다음 프로퍼티를 가져오지 않고 Null을 반환하는 코틀린 문법입니다. ?: 은 앞에서 널이 발생한 경우 뒤에 있는 값으로 해당 변수에 할당하는 키워드 입니다.

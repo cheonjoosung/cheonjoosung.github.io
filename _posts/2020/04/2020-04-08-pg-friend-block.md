@@ -33,7 +33,7 @@ public int solution(int m, int n, String[] board) {
         for(int i=0 ; i<=m-2 ; i++) {
             for(int j=0 ; j<=n-2 ; j++) {
                 if(map[i][j] == '0') continue;
-                
+
                 if(map[i][j] == map[i][j+1] && map[i][j+1] == map[i+1][j+1] && map[i+1][j+1] == map[i+1][j]) {
                     cnt += check(i,j, map, isVisited);
                 }
@@ -53,12 +53,12 @@ public int solution(int m, int n, String[] board) {
 
 public int check(int x, int y, char [][] map, boolean [][] isVisited) {
     int res = 4;
-    
+
     if(isVisited[x][y]) res--;
     if(isVisited[x+1][y]) res--;
     if(isVisited[x][y+1]) res--;
     if(isVisited[x+1][y+1]) res--;
-    
+
     isVisited[x][y] = true;
     isVisited[x+1][y] = true;
     isVisited[x][y+1] = true;
@@ -72,13 +72,13 @@ public void move(boolean [][] isVisited, char [][] map, int m, int n) {
         for(int i=m-1 ; i>=0 ; i--) {
             if(isVisited[i][j] == true) {
                 map[i][j] = '0';
-                
+
                 for(int k=i-1 ; k>=0 ; k--) {
                     if(isVisited[k][j] == false) {
                         char temp = map[i][j];
                         map[i][j] = map[k][j];
                         map[k][j] = temp;
-                        
+
                         boolean isTemp = isVisited[i][j];
                         isVisited[i][j] = isVisited[k][j];
                         isVisited[k][j] = isTemp;
@@ -87,9 +87,9 @@ public void move(boolean [][] isVisited, char [][] map, int m, int n) {
                 }
             }
         }
-        
+
     }
-}	
+}
 ```
 - 주어진 board를 toCharArray() 메소드를 활용하여 2차원 배열로 값 복사
 - 행은 0~m-2 까지, 열은 0~n-2 까지 시작한 위치에서 우->아래->좌->위 이므로 m-1,n-2까지 할필요가 없음
