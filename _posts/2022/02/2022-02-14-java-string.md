@@ -49,7 +49,7 @@ String str2 = "madplay"
 String str3 = new String("madplay")
 String str4 = new String("madplay")
 ```
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15dfa707-c545-432a-a8f2-121df68af8fc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220214T133434Z&X-Amz-Expires=86400&X-Amz-Signature=08bed6dc3a2d08d51cbf1655bfa4ab65c06813527b950eb000d2e7c286a5a7db&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15dfa707-c545-432a-a8f2-121df68af8fc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T122816Z&X-Amz-Expires=86400&X-Amz-Signature=394d21b59c7ac41ba6001db3bd254473747733bbe8f65e0a724550f71103a753&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 str1을 할당한 후 str2의 동일한 값을 할당한 경우 동일한 주소값을 참조하고 있다. String constant pool에 의해서 이미 생성되어있는지 확인한 후에 있으면 그 값을 참조하도록 하고 있다. String Class의 intern() 메소드가 풀을 검색하고 매핑을 하는 역할을 한다.
 
 new 키워드를 생성했을 경우 constant pool이 아닌 영역에 매번 생성하고 있다.
@@ -65,7 +65,7 @@ String a = "Hello"
 a += " World"
 ```
 final 상수라고 선언했지만 우리는 아주 자연스럽게 값을 변경했지만 컴파일 & 런타임시 아무런 문제가 발생하지 않는다.
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2e8f23b0-a4a4-43fb-806a-933a05e084cf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220214T133410Z&X-Amz-Expires=86400&X-Amz-Signature=d7d5e22957f7c40583b333a0e00ce7688be9d785744c73b7094b876def60c3c8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2e8f23b0-a4a4-43fb-806a-933a05e084cf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T122820Z&X-Amz-Expires=86400&X-Amz-Signature=aafd1ab6706dec2d88816aba979a2ae30b2897cb8ee810e11bb8dfbef68e44a9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 a += “ World” 를 했을때 기존값에 변경이 일어날거라고 생각을 하지만 final로 선언되었기에 변경자체가 불가능하다. Hello World라는 값을 하나 만든후에 참조하는 값을 변경한다.
 
 **String constant pool에 있는 “Hello”는 Heap 영역에 있고 사용하지 않는 다면 언젠가 garbage Collect가 처리해줄 것 이다.**
