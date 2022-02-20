@@ -318,6 +318,58 @@ map.replace("key2", "newValue2");
 map.size()
 ```
 
+**HashMap 동작원리 and 충돌회피**
+```javascript
+public final boolean equals(Object o) {
+      if (o == this)
+          return true;
+      if (o instanceof Map.Entry) {
+          Map.Entry<?,?> e = (Map.Entry<?,?>)o;
+          if (Objects.equals(key, e.getKey()) &&
+              Objects.equals(value, e.getValue()))
+              return true;
+      }
+      return false;
+  }
+
+public final int hashCode() {
+    return Objects.hashCode(key) ^ Objects.hashCode(value);
+}
+
+static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+```
+위의 있는 HashMap(HashSet이 내부적으로 HashMap을 사용)에서 equals(), HascdeCode()의 메소드 이다.
+
+HashMap의 중복처리는 key와 hash(key)를 값이 던짐. key의 해쉬코드 xor unsinged bit operator를 활용하여 중복처리를 하고 있다.
+
+하지만 중복이 발생할 수도 있는데 회피 방법은?
+
+1. Open Addressing
+    1. 일정 공간을 할당하고 순차적으로 저장 (배열 처럼)
+2. Separate Chaining
+    1. 1번의 방법 버킷에 할당하고 충돌이 발생할 떄 체인으로 연결하는 것
+3. 자바8 향상버전
+    1. LinkedList로 계속 만들면 성능 이슈
+    2. 일정 갯수가 넘어가면 트리로 변경하여 관리
+    3. 검색은 트리가 유리고 이떄 redblackTree개념을 활용. [ O(n) vs O(log(n) = h) ]
+    4. 대소 관계를 위해 아래의 코드를 활용
+
+```javascript
+static int tieBreakOrder(Object a, Object b) {
+    int d;
+    if (a == null || b == null ||
+        (d = a.getClass().getName().
+         compareTo(b.getClass().getName())) == 0)
+        d = (System.identityHashCode(a) <= System.identityHashCode(b) ?
+             -1 : 1);
+    return d;
+}
+```
+
+
 ## 멀티쓰레드 환경에서 콜렉션 사용
 위에서 언급한 Collection 중 Vector, Hashtable 은 동기화(syncrhonized)가 적용되어 있어서 Thread Safe가 가능하다. Multi Thread 환경에서 Collection를 사용하기 위한 방법이 있다.
 
