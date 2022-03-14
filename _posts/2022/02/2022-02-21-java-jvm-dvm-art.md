@@ -9,10 +9,10 @@ description: (Java) Java JVM & DVM & ART 개념 및 차이점
 ## JVM
 자바 **바이트 코드를 실행할 수 있는 주체**로 OS 운영체제 위에서 작동을 한다
 → 플랫폼 독립적 (C++은 실행파일까지 만들어버리기에 OS마다 새로 빌드)
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ffbad388-80dd-45ed-95f8-2be00445971a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220221T140409Z&X-Amz-Expires=86400&X-Amz-Signature=55949eca282fefbcf2805754e33156715b4eabf0993e48472388774b29cb669b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158185329-e64ff42a-6b4d-4af3-9ad8-7c4313d519bd.png)
 
 **JVM 구조**
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e85d13f5-ff2f-4372-b106-d6f6f83f27bd/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220221T140419Z&X-Amz-Expires=86400&X-Amz-Signature=125365dc1c15f3372e438acb4fa34d548a178892280034ac114e2376b8c604be&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158185339-540be758-2976-4515-b604-3d26932e191e.png)
 1. 클래스 로더
     1. 로딩 - boost strap, extension, application
     2. 링크 - verify, prepare, resolve
@@ -41,11 +41,11 @@ description: (Java) Java JVM & DVM & ART 개념 및 차이점
         1. 클래스 수준의 데이터가 정적 변수를 포함하여 저장
         2. 공유 자원...?
 
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/74f7eaa6-2e1a-493b-b844-7a08d35d8703/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220221T140450Z&X-Amz-Expires=86400&X-Amz-Signature=5da4ef0686f25ea9d5c074c6e86d10adc354a2250d9b4c63a450823de847f1b9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158185348-bfbbd1d2-a511-46a4-8d2e-c7aee4856d90.png)
 
 ## DVM
 안드로이드 운영체제는 PC와 달리 메모리/실행 등의 제약이 많으므로 바이트코드를 그대로 사용이 불가능했다. 바이트 코드를 묶은 .dex파일을 만들고 이에 resourse를 더해 .apk파일을 만든다.
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c11ec5bb-d2bc-4e74-8950-b0908955d589/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220221T140618Z&X-Amz-Expires=86400&X-Amz-Signature=efcedfc195f1e486c402af50c487c04998b0ee501c7e5478a21d9a41daec1e98&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158185362-5af8f72d-2baf-4adc-9e7f-f6919c8f423a.png)
 안드로이드에서 JVM으로 컴파일된 바이트코드를 실행할 수 없다. java byteCode → dalvik byteCode로 변환하는 dx툴을 android SDk에 포함시켜 두었다.여러 클래스 파일을 묶어서 .dex로 변환하면서 dalvik byte code 로 바꾼다. 압축이 일어나기에 .jar 파일 보다는 크기가 조금 줄어든다.
 
 **JIT 컴파일**
@@ -85,7 +85,7 @@ Threshold를 초과하면 바이트코드를 기계어로 해석. 특정 횟수 
     - 에외 및 비정상 종료 보고서의 진단 세부정보 개선
 
 ## DVM vs ART
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4af82abe-492a-45e3-b110-8202952581e1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220221T140526Z&X-Amz-Expires=86400&X-Amz-Signature=82d4681a4dbdc3e9cefe259c647c497e92097bcb9d9bcf733d737273afc6d2d7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158185405-ddcc09e9-1179-4bba-98ca-c099d22a2237.png)
 DVM으로 실행을 하면 코드를 Trace JIT 방식으로 기계어로 읽는 반면에 AOT는 미리 사전 컴파일을 진행하고 ART를 통해 바로 실행하는 차이가 있다.
 
 **dexopt vs dex2oat**
