@@ -9,9 +9,9 @@ description: Java의 Collection Framework 인 List, Set, Queue, Map 및 멀티�
 ## JCF (Java Collection Framework)
 JCF는 재사용 가능한 콜렉션 데이터 구조를 구현하는 클래스 및 인터페이스 세트입니다. 프레임 워크라고도하지만 라이브러리 방식으로 작동합니다. 컬렉션 프레임 워크는 다양한 컬렉션과이를 구현하는 클래스를 정의하는 인터페이스를 모두 제공합니다. ([JCF 구글 위키](https://en.wikipedia.org/wiki/Java_collections_framework))
 
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4a03909a-f4f6-4b54-869e-077f8d19b69e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T122705Z&X-Amz-Expires=86400&X-Amz-Signature=b5b4cbaab8eb48149ac4b4aa6285f9e4a653a46d70f8cba7716f789cfc61e61c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184176-33ff1d94-0302-4864-a995-9c83042f4091.png)
 
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2c13bf58-d422-46a2-879f-f53a032c32d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T122711Z&X-Amz-Expires=86400&X-Amz-Signature=2b01a9eea6ef7f8d37dc968efe1be04a0604d80d388a19000530465c6229abca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184194-499ba292-482c-4d35-823d-6b4e356f82b4.png)
 책이나 인터넷 검색해보면 추상클래스가 생략되어 있는 그림이 많다. 내부적인 실제 구조는 위의 그림과 같다.
 
 ## List
@@ -208,7 +208,7 @@ ts.clear();
 ```
 삽입 7, 5, 6를 해도 정렬이 되므로 탐색을 하면 5, 6, 7로 결과가 나온다.
 
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/86a5a219-99ca-471a-967b-5994fdc52b26/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220215%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220215T110618Z&X-Amz-Expires=86400&X-Amz-Signature=30a5c7c3d381cc96acd716a45e7910734c659cb5d68c00fb77d1177108a0866a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184208-a5f280f7-a01c-4e48-84bf-b47394a518b7.png)
 이진검색의 탐색속도는 높이로 결정되기에 루트 노드 삽입 이후에 그보다 큰 값만 있으면 우측으로 편향된 트리가 발생합니다. 탐색시간 O(n) or O(h)
 
 레드블랙트리는 balanced BST로 이러한 문제가 발생하지 않는다. 데이터 추가/삭제에 따라 조건을 맞추기 위해서 rebalancing이 계속해서 일어난다. 참고 :([https://zeddios.tistory.com/237](https://zeddios.tistory.com/237))
@@ -374,7 +374,7 @@ static int tieBreakOrder(Object a, Object b) {
 위에서 언급한 Collection 중 Vector, Hashtable 은 동기화(syncrhonized)가 적용되어 있어서 Thread Safe가 가능하다. Multi Thread 환경에서 Collection를 사용하기 위한 방법이 있다.
 
 **Collections.synchronizedXXX 사용**
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cf333067-bcdd-4aa3-96dc-fc435bd7842d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-02-14_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.07.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220215%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220215T105010Z&X-Amz-Expires=86400&X-Amz-Signature=94a970c389751c79d7608e91a08fbd65c808b1cf556dd609e4dba3eb050d3ddb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA%25202022-02-14%2520%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE%25201.07.11.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184225-b03c5ab0-521d-4ce1-9559-38ae29b54472.png)
 Collections의 static method로 구현이 되어있어서 바로 접근하여 사용할 수 있다. Collection을 구현한 SynchronizedCollection<E> 과 Map을 구현한 SynchronizedMap<E>을 통해 Thread Safe가 가능한 형태로 변환해 준다.
 
 ```javascript
@@ -392,7 +392,7 @@ public V method() {
 컴퓨터 과학에서 락(lock) 또는 뮤텍스(mutex, 상호 배제에서)는 여러 스레드를 실행하는 환경에서 자원에 대한 접근에 제한을 강제하기 위한 동기화 매커니즘이다. 락은 상호 배제 동시성 제어 정책을 강제하기 위해 설계된다. [컴퓨터과학](https://ko.wikipedia.org/wiki/락_)
 
 **java.util.concurrent.xxxx 사용**
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/86a5a219-99ca-471a-967b-5994fdc52b26/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T122746Z&X-Amz-Expires=86400&X-Amz-Signature=cd44fffd8f2b525c33d21e7fd36ec2ecdd1c45208af4f68411b8f98f44731d1c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184248-fa4fda98-2a6b-4def-909f-35d7677e2e49.png)
 
 위에서는 synchronized & mutex를 활용하여 공유 데이타에 대한 락을 제공했다면 ConcurrentXXX는 다른 방식을 사용한다.
 ```javascript
@@ -415,7 +415,7 @@ private transient volatile CounterCell[] counterCells;
 ```
 대표적으로 ConcurrentHashMap의 필드변수들을 보면 volatile 키워드를 사용한다. 이 키워드는 변수를 메인 메모리에 저장한다는 의미이다. volatitle을 선언하면 메인 메모리에도 변수를 저장하고 값을 읽어올때 메인 메모리를 참조한다.
 
-![preview](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b133357b-3590-448a-ab68-a414f714920c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220215%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220215T105740Z&X-Amz-Expires=86400&X-Amz-Signature=07a399191611e1b4b36e9cf98e099011cc97b797f083b0103c87dca5272d37c1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![preview](https://user-images.githubusercontent.com/13310269/158184256-d500ac1d-ce1a-4789-8324-e8fe4efda514.png)
 **공유자원에 대한 값을** **read/write할 때에는 원자성을 보장해야 하기에 synchronized를 통해 읽고/쓰는 작업 도중에 다른 쓰레드의 읽기 작업을 막아야** 한다.
 
 → 모든 쓰레드가 쓰기작업이 있는 프로그래밍보다 일부 쓰레드가 쓰기 작업을 하고 나머지는 읽기 작업을 하는 프로그래밍 환경에 잘 어울릴 것이다.
