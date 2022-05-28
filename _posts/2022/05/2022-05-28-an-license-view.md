@@ -1,9 +1,9 @@
 ---
-title: Android License View : 라이센스 뷰 만들기
+title: Android License View (라이센스 뷰 만들기)
 tags: [Android]
 style: fill
 color: dark
-description: Android License View : 라이센스 뷰 만들기
+description: Android License View (라이센스 뷰 만들기)
 ---
 
 ## 설명
@@ -14,10 +14,10 @@ description: Android License View : 라이센스 뷰 만들기
 
 **깃헙에 라이센스 파일 업로드**
 깃헙에서 업로드한 파일 클릭
-![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/license3.png?raw=true)
+![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/image/license3.png?raw=true)
 
 raw 버튼 클릭 후 상단의 url 복사
-![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/license2.png?raw=true)
+![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/image/license2.png?raw=true)
 
 
 
@@ -62,4 +62,4 @@ url에 깃헙에 업로드한 라이센스 파일 경로를 입력하면 끝
 ```
 
 결과
-![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/license1.jpeg?raw=true)
+![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/image/license1.jpeg?raw=true)
