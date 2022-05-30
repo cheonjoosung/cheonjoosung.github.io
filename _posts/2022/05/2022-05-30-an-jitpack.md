@@ -10,7 +10,7 @@ description: Android jitpack 라이브러리 배포
 팝업 메뉴를 보여줄 때 안드로이드에서 제공하는 menu 를 활용하여 개발이 가능하다. 하지만, 아이콘을 넣고 추가적인 액션이 필요한 팝업 메뉴는 안드로이드 기본 메뉴로만은 불가능 하다.
 
 
-# 1. 라이브러리 만들기
+### 1. 라이브러리 만들기
 1. 새로운 프로젝트를 생성한다.
 2. File > new > new Module > Android Library 선택하고 만들면 끝
 3. MyLog 클래스 만들고 log(msg T) { log.e(”MyLog”, “$T”) } 처럼 확인가능한 간단한 코드 추가
@@ -18,7 +18,7 @@ description: Android jitpack 라이브러리 배포
 
 ![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/image/jitpack/jitpack1.png?raw=true)
 
-# 2. jitpack 사용
+### 2. jitpack 사용
 ![preview](https://github.com/cheonjoosung/cheonjoosung/blob/master/image/jitpack/jitpack2.png?raw=true)
 
 1. [https://jitpack.io/](https://jitpack.io/#cheonjoosung/Android-Simple-Popup) 으로 들어가기
