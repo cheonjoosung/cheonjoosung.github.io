@@ -1,9 +1,9 @@
 ---
-title: Android jitpack 라이브러리 배포
+title: Android Youtube Search API with data v3 유튜브 검색 API
 tags: [Android]
 style: fill
 color: dark
-description: Android jitpack 라이브러리 배포
+description: Android Youtube Search API with data v3 유튜브 검색 API
 ---
 
 ## 설명
