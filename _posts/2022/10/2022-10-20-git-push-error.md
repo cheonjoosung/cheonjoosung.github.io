@@ -1,9 +1,9 @@
 ---
-title: Android Studio git Invocation failed Unexpected end of file from server java.lang.RuntimeException: Invocation failed Unexpected end of file from 해결방법
+title: Android Studio git Invocation failed Unexpected end of file from server java.lang.RuntimeException 해결방법
 tags: [git]
 style: fill
 color: dark
-description: git Invocation failed Unexpected end of file from server java.lang.RuntimeException: Invocation failed Unexpected end of file from 해결방법
+description: git push error
 ---
 
 ## Git push 문제
