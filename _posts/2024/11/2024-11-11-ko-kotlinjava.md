@@ -161,6 +161,7 @@ println("World".addPrefix("Hello ")) // Hello World
 * copy() 메서드를 기본 제공하여 객체를 복사할 때 특정 필드만 변경할 수 있습니다.
 * 자바에서는 불변성을 보장하려면 final 키워드를 명시하고, 모든 필드에 대해 setter 메서드를 제거해야 하며, 이를 실수로 빠뜨릴 위험이 있습니다.
 * nullable 변수 처리 가능
+
 ```kotlin
 data class Person(val name: String, val age: Int, val address: String? = null)
 
