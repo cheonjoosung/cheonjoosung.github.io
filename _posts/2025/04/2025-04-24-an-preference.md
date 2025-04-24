@@ -65,21 +65,21 @@ inline fun <reified T> Context.getPref(key: String, defaultValue: T): T {
 private fun before() {
   val prefs = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
   with(prefs.edit()) {
-    putString("StringValue", "string")
+    putString("stringValue", "string")
     apply()
   }
   with(prefs.edit()) {
-    putString("intValue", "string")
+    putInt("intValue", 100)
     apply()
   }
   with(prefs.edit()) {
-    putString("booleanValue", "string")
+    putBoolean("booleanValue", false)
     apply()
   }
 
-  prefs.getString("stringValue", "")
-  prefs.getInt("intValue", 0)
-  prefs.getBoolean("booleanValue", false)
+  prefs.getString("stringValue", "").also { Log.e("CJS", "it=$it") }
+  prefs.getInt("intValue", 0).also { Log.e("CJS", "it=$it") }
+  prefs.getBoolean("booleanValue", false).also { Log.e("CJS", "it=$it") }
 }
 ```
 
