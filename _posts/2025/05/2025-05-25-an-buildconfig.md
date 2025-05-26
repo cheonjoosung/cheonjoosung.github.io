@@ -48,9 +48,7 @@ if (versionCode < 10) {
 | 설정 위치          | `build.gradle(:app)`의 `defaultConfig` 블록 내에서 정의 |
 
 - app 수준의 gradle
-![main_image](./image/buildconfig.png)
-
-- defaultConfg { } 블록 안에 versionCode, versionName 확인이 가능
+> defaultConfig { } 블록 안에 versionCode, versionName 확인이 가능
 
 추가적으로
 - PlayStore 배포 시 versionCode는 반드시 증가해야 함
