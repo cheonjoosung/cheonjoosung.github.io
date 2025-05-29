@@ -1,5 +1,5 @@
 ---
-title: 객체지향프로그래밍(OOP)의 핵심 특징 4가지 완벽 정리
+title: Kotlin Sequence 활용 방법
 tags: [ Kotlin ]
 style: fill
 color: dark
