@@ -3,7 +3,7 @@ title: Java Atomic 클래스 완벽 정리
 tags: [ Java ]
 style: fill
 color: dark
-description: Java 쓰레드 교착상태(Deadlock) 완벽 이해 및 예제
+description: Java Atomic 클래스 완벽 정리
 ---
 
 ## ✨ 개요

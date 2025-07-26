@@ -3,7 +3,7 @@ title: Java 다중 상속 (Multiple Inheritance) 완전 정복
 tags: [ Java ]
 style: fill
 color: dark
-description: Kotlin infix 함수 완전정복
+description: Java 다중 상속 (Multiple Inheritance) 완전 정복
 ---
 
 ## ✨ 개요
