@@ -3,7 +3,7 @@ title: Android 안전한 공유 시트 열기 – ShareCompat 한 줄로 끝내�
 tags: [Android]
 style: fill
 color: dark
-description: Android 화면 캡쳐 방법 그리고 저장하기- View, 전체화면, RecyclerView
+description: Android 안전한 공유 시트 열기 – ShareCompat 한 줄로 끝내기 (+파일 URI/권한 완벽 가이드)
 ---
 
 ## ✨ 개요
