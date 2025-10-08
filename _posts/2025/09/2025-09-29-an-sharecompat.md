@@ -32,7 +32,6 @@ description: Android 안전한 공유 시트 열기 – ShareCompat 한 줄로 �
 dependencies {
     implementation "androidx.core:core-ktx:1.13.1" // or newer
 }
-- FLAG_SECURE가 켜진 창은 캡처 불가(보안화면).
 ```
 
 #### 단일 이미지 공유
