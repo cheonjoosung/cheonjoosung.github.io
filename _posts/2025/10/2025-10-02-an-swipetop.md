@@ -1,5 +1,5 @@
 ---
-title: Android 최상단에서만 SwipeRefresh 동작시키기 – RecyclerView/NestedScrollView/WebView 한 번에 정리
+title: Android 최상단에서만 SwipeRefresh 동작시키기
 tags: [Android]
 style: fill
 color: dark

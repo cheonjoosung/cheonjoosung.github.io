@@ -1,5 +1,5 @@
 ---
-title: Android 상태바/네비게이션바 숨기기(Immersive Mode) – WindowInsetsController / SYSTEM_UI_FLAG 한 줄 토글
+title: Android 상태바/네비게이션바 숨기기(Immersive Mode)
 tags: [Android]
 style: fill
 color: dark
