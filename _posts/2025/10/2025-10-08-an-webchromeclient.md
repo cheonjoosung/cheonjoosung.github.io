@@ -1,9 +1,9 @@
 ---
-title: Android√ WebChromeClient 완벽 가이드
+title: Android WebChromeClient 완벽 가이드
 tags: [Android]
 style: fill
 color: dark
-description: Android√ WebChromeClient 완벽 가이드 – 파일 업로드, 진행률, JS 다이얼로그, 전체화면 영상까지 (Kotlin)
+description: Android WebChromeClient 완벽 가이드 – 파일 업로드, 진행률, JS 다이얼로그, 전체화면 영상까지 (Kotlin)
 ---
 
 ## ✨ 개요
