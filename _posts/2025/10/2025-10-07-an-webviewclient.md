@@ -1,5 +1,5 @@
 ---
-title: Android√ WebViewClient 완벽 가이드 – 네비게이션/에러/SSL/리소스 제어 (Kotlin)
+title: Android WebViewClient 완벽 가이드 – 네비게이션/에러/SSL/리소스 제어 (Kotlin)
 tags: [Android]
 style: fill
 color: dark
