@@ -71,7 +71,6 @@ fun CharSequence?.nfkd(): String = this?.let { Normalizer.normalize(it, Normaliz
 fun CharSequence?.removeDiacritics(): String =
     nfkd().replace(Regex("\\p{M}+"), "")
 
-// endregion
 
 // region --- 케이스 변환 / 슬러그 ---
 
