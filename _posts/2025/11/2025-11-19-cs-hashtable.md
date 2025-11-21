@@ -116,7 +116,7 @@ probe: i i+1 i+2 ...
 
 ---
 
-## 6. otlin/Java 관점 실무 팁
+## 6. kotlin/Java 관점 실무 팁
 
 - `HashMap/HashSet` 사용 시 **`equals`/`hashCode` 계약** 준수
   + `a == b` 이면 `a.hashCode() == b.hashCode()` 반드시 성립
