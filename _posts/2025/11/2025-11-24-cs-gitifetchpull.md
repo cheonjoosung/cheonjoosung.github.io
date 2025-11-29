@@ -1,6 +1,6 @@
 ---
-title: (CS/컴퓨터공학) git fetch vs git pull 차이 — 완벽 정리
-tags: [CS, GIT]
+title: (git) fetch vs git pull 차이 — 완벽 정리
+tags: [GIT]
 style: fill
 color: dark
 description: (CS/컴퓨터공학) git fetch vs git pull 차이 — 완벽 정리
