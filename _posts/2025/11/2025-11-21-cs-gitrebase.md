@@ -1,6 +1,6 @@
 ---
-title: (CS/컴퓨터공학) Git rebase vs merge 비교
-tags: [CS, GIT]
+title: (git) rebase vs merge 비교
+tags: [GIT]
 style: fill
 color: dark
 description: (CS/컴퓨터공학) Git rebase vs merge 비교 히스토리 관리 전략과 실무 팁 총정리
