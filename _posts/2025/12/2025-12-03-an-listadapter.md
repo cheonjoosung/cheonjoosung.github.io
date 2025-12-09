@@ -146,7 +146,7 @@ submitList(newList)
 
 ---
 
-## 8. 8. Best Practice (실무 팁)
+## 8. Best Practice (실무 팁)
 
 - data class 사용
   + equals 비교가 자동 구현됨
