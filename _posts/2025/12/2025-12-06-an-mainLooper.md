@@ -157,7 +157,7 @@ override fun onDestroyView() {
 
 ---
 
-## 7. dCoroutine / View.postDelayed와 비교(언제 Handler가 맞나)
+## 7. Coroutine / View.postDelayed와 비교(언제 Handler가 맞나)
 
 - Coroutine이 이미 프로젝트 표준이면 lifecycleScope.launch { delay(1000) }가 더 깔끔할 때가 많습니다.
 - 반면 Handler는 이런 경우에 여전히 강점이 있습니다:
