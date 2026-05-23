@@ -9,7 +9,7 @@
 
 ### Coroutines / Flow (25개)
 
-- [ ] 1. Coroutines 기초 — suspend fun, launch vs async
+- [x] 1. Coroutines 기초 — suspend fun, launch vs async
 - [ ] 2. Coroutines 취소 — cancel(), isActive, CancellationException
 - [ ] 3. Job vs SupervisorJob — 자식 코루틴 실패 전파
 - [ ] 4. CoroutineExceptionHandler와 supervisorScope
