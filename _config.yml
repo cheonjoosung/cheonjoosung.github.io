@@ -68,3 +68,4 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+  - posting-ideas.md
