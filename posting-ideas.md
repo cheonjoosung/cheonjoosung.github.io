@@ -10,9 +10,9 @@
 ### Coroutines / Flow (25개)
 
 - [x] 1. Coroutines 기초 — suspend fun, launch vs async
-- [ ] 2. Coroutines 취소 — cancel(), isActive, CancellationException
-- [ ] 3. Job vs SupervisorJob — 자식 코루틴 실패 전파
-- [ ] 4. CoroutineExceptionHandler와 supervisorScope
+- [x] 2. Coroutines 취소 — cancel(), isActive, CancellationException
+- [x] 3. Job vs SupervisorJob — 자식 코루틴 실패 전파
+- [x] 4. CoroutineExceptionHandler와 supervisorScope
 - [ ] 5. viewModelScope vs lifecycleScope vs GlobalScope 비교
 - [ ] 6. withContext vs launch vs async 차이 완전 정리
 - [ ] 7. Coroutines Dispatcher 심화 — IO, Main, Default, Unconfined
