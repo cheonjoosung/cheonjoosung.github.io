@@ -17,7 +17,7 @@
 - [x] 6. withContext vs launch vs async 차이 완전 정리
 - [x] 7. Coroutines Dispatcher 심화 — IO, Main, Default, Unconfined
 - [x] 8. Flow 기초 — Cold Stream 생성과 collect
-- [ ] 9. Flow vs LiveData — 언제 무엇을 쓸까
+- [x] 9. Flow vs LiveData — 언제 무엇을 쓸까
 - [ ] 10. StateFlow vs SharedFlow 완전 비교
 - [ ] 11. stateIn vs shareIn — Flow를 Hot으로 변환
 - [ ] 12. SharingStarted 전략 — WhileSubscribed, Eagerly, Lazily
