@@ -18,7 +18,7 @@
 - [x] 7. Coroutines Dispatcher 심화 — IO, Main, Default, Unconfined
 - [x] 8. Flow 기초 — Cold Stream 생성과 collect
 - [x] 9. Flow vs LiveData — 언제 무엇을 쓸까
-- [ ] 10. StateFlow vs SharedFlow 완전 비교
+- [x] 10. StateFlow vs SharedFlow 완전 비교
 - [ ] 11. stateIn vs shareIn — Flow를 Hot으로 변환
 - [ ] 12. SharingStarted 전략 — WhileSubscribed, Eagerly, Lazily
 - [ ] 13. Flow 연산자 — zip, combine, merge
