@@ -19,7 +19,7 @@
 - [x] 8. Flow 기초 — Cold Stream 생성과 collect
 - [x] 9. Flow vs LiveData — 언제 무엇을 쓸까
 - [x] 10. StateFlow vs SharedFlow 완전 비교
-- [ ] 11. stateIn vs shareIn — Flow를 Hot으로 변환
+- [x] 11. stateIn vs shareIn — Flow를 Hot으로 변환
 - [ ] 12. SharingStarted 전략 — WhileSubscribed, Eagerly, Lazily
 - [ ] 13. Flow 연산자 — zip, combine, merge
 - [ ] 14. flatMapLatest vs flatMapMerge vs flatMapConcat
