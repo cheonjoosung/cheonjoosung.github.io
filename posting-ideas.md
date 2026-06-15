@@ -23,11 +23,11 @@
 - [x] 12. SharingStarted 전략 — WhileSubscribed, Eagerly, Lazily
 - [x] 13. Flow 연산자 — zip, combine, merge
 - [x] 14. flatMapLatest vs flatMapMerge vs flatMapConcat
-- [ ] 15. Flow debounce & throttleFirst — 검색창 실전 적용
-- [ ] 16. Flow retry & retryWhen — 네트워크 재시도 패턴
-- [ ] 17. Flow buffer & conflate — 배압(Backpressure) 처리
-- [ ] 18. Flow flowOn — 스레드 전환 원리
-- [ ] 19. Flow catch & onCompletion — 에러/완료 처리
+- [x] 15. Flow debounce & throttleFirst — 검색창 실전 적용
+- [x] 16. Flow retry & retryWhen — 네트워크 재시도 패턴
+- [x] 17. Flow buffer & conflate — 배압(Backpressure) 처리
+- [x] 18. Flow flowOn — 스레드 전환 원리
+- [x] 19. Flow catch & onCompletion — 에러/완료 처리
 - [ ] 20. Flow — buildList, buildMap과 함께 쓰는 패턴
 - [ ] 21. Coroutines Mutex — 코루틴 동기화
 - [ ] 22. Coroutines Semaphore — 동시 실행 수 제한
