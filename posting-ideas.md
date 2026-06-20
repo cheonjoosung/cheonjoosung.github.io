@@ -28,12 +28,12 @@
 - [x] 17. Flow buffer & conflate — 배압(Backpressure) 처리
 - [x] 18. Flow flowOn — 스레드 전환 원리
 - [x] 19. Flow catch & onCompletion — 에러/완료 처리
-- [ ] 20. Flow — buildList, buildMap과 함께 쓰는 패턴
-- [ ] 21. Coroutines Mutex — 코루틴 동기화
-- [ ] 22. Coroutines Semaphore — 동시 실행 수 제한
-- [ ] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
-- [ ] 24. repeatOnLifecycle vs launchWhenStarted 비교
-- [ ] 25. Coroutines structured concurrency 완전 정리
+- [x] 20. Flow — buildList, buildMap과 함께 쓰는 패턴
+- [x] 21. Coroutines Mutex — 코루틴 동기화
+- [x] 22. Coroutines Semaphore — 동시 실행 수 제한
+- [x] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
+- [x] 24. repeatOnLifecycle vs launchWhenStarted 비교
+- [x] 25. Coroutines structured concurrency 완전 정리
 
 ### 언어 기능 심화 (25개)
 
