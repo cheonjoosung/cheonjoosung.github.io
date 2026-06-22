@@ -30,18 +30,18 @@
 - [x] 19. Flow catch & onCompletion — 에러/완료 처리
 - [x] 20. Flow — buildList, buildMap과 함께 쓰는 패턴
 - [x] 21. Coroutines Mutex — 코루틴 동기화
-- [x] 22. Coroutines Semaphore — 동시 실행 수 제한
-- [x] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
-- [x] 24. repeatOnLifecycle vs launchWhenStarted 비교
-- [x] 25. Coroutines structured concurrency 완전 정리
+- [ ] 22. Coroutines Semaphore — 동시 실행 수 제한
+- [ ] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
+- [ ] 24. repeatOnLifecycle vs launchWhenStarted 비교
+- [ ] 25. Coroutines structured concurrency 완전 정리
 
 ### 언어 기능 심화 (25개)
 
-- [ ] 26. Value class (Inline class) — 타입 안전성과 성능
-- [ ] 27. SAM 변환 (Functional Interface) — Java 람다 대체
-- [ ] 28. crossinline vs noinline 차이
-- [ ] 29. Kotlin 제네릭 심화 — upper bound, where 절
-- [ ] 30. Kotlin star projection (*) 언제 쓰는가
+- [x] 26. Value class (Inline class) — 타입 안전성과 성능
+- [x] 27. SAM 변환 (Functional Interface) — Java 람다 대체
+- [x] 28. crossinline vs noinline 차이
+- [x] 29. Kotlin 제네릭 심화 — upper bound, where 절
+- [x] 30. Kotlin star projection (*) 언제 쓰는가
 - [ ] 31. Kotlin sealed interface
 - [ ] 32. Data object — object에 equals/hashCode/toString 자동 생성
 - [ ] 33. Enum entries — values() 대신 entries 쓰는 이유
