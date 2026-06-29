@@ -30,10 +30,10 @@
 - [x] 19. Flow catch & onCompletion — 에러/완료 처리
 - [x] 20. Flow — buildList, buildMap과 함께 쓰는 패턴
 - [x] 21. Coroutines Mutex — 코루틴 동기화
-- [ ] 22. Coroutines Semaphore — 동시 실행 수 제한
-- [ ] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
-- [ ] 24. repeatOnLifecycle vs launchWhenStarted 비교
-- [ ] 25. Coroutines structured concurrency 완전 정리
+- [x] 22. Coroutines Semaphore — 동시 실행 수 제한
+- [x] 23. SharedFlow vs Channel — 일회성 이벤트 선택 기준
+- [x] 24. repeatOnLifecycle vs launchWhenStarted 비교
+- [x] 25. Coroutines structured concurrency 완전 정리
 
 ### 언어 기능 심화 (25개)
 
@@ -42,10 +42,10 @@
 - [x] 28. crossinline vs noinline 차이
 - [x] 29. Kotlin 제네릭 심화 — upper bound, where 절
 - [x] 30. Kotlin star projection (*) 언제 쓰는가
-- [ ] 31. Kotlin sealed interface
-- [ ] 32. Data object — object에 equals/hashCode/toString 자동 생성
-- [ ] 33. Enum entries — values() 대신 entries 쓰는 이유
-- [ ] 34. when 표현식 심화 — subject 변수, 조건 결합
+- [x] 31. Kotlin sealed interface
+- [x] 32. Data object — object에 equals/hashCode/toString 자동 생성
+- [x] 33. Enum entries — values() 대신 entries 쓰는 이유
+- [x] 34. when 표현식 심화 — subject 변수, 조건 결합
 - [ ] 35. 꼬리 재귀 (tailrec) — 스택 오버플로우 방지
 - [ ] 36. Kotlin 커링 (Currying) 패턴
 - [ ] 37. Kotlin 함수 합성 (Function Composition)
