@@ -1,5 +1,5 @@
 ---
-title: Coroutines Semaphore 완전 정리 — 동시 실행 수 제한
+title: (Kotlin/코틀린) Coroutines Semaphore 완전 정리 — 동시 실행 수 제한
 tags: [ Kotlin ]
 style: fill
 color: dark

@@ -1,5 +1,5 @@
 ---
-title: Coroutines Mutex 완전 정리 — 코루틴 동기화
+title: (Kotlin/코틀린) Coroutines Mutex 완전 정리 — 코루틴 동기화
 tags: [ Kotlin ]
 style: fill
 color: dark

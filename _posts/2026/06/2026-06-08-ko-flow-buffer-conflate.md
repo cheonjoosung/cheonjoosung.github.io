@@ -1,5 +1,5 @@
 ---
-title: Flow buffer & conflate 완전 정리 — 배압(Backpressure) 처리
+title: (Kotlin/코틀린) Flow buffer & conflate 완전 정리 — 배압(Backpressure) 처리
 tags: [ Kotlin ]
 style: fill
 color: dark

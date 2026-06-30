@@ -1,5 +1,5 @@
 ---
-title: Flow flowOn 완전 정리 — 스레드 전환 원리
+title: (Kotlin/코틀린) Flow flowOn 완전 정리 — 스레드 전환 원리
 tags: [ Kotlin ]
 style: fill
 color: dark

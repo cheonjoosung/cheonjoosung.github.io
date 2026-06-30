@@ -1,5 +1,5 @@
 ---
-title: Flow debounce & throttleFirst 완전 정리 — 검색창 실전 적용
+title: (Kotlin/코틀린) Flow debounce & throttleFirst 완전 정리 — 검색창 실전 적용
 tags: [ Kotlin ]
 style: fill
 color: dark

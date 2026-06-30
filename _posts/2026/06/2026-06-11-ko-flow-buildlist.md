@@ -1,5 +1,5 @@
 ---
-title: Flow와 함께 쓰는 buildList, buildMap 패턴
+title: (Kotlin/코틀린) Flow와 함께 쓰는 buildList, buildMap 패턴
 tags: [ Kotlin ]
 style: fill
 color: dark

@@ -1,5 +1,5 @@
 ---
-title: Flow retry & retryWhen 완전 정리 — 네트워크 재시도 패턴
+title: (Kotlin/코틀린) Flow retry & retryWhen 완전 정리 — 네트워크 재시도 패턴
 tags: [ Kotlin ]
 style: fill
 color: dark

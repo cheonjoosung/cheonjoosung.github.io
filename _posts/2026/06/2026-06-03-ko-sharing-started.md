@@ -1,5 +1,5 @@
 ---
-title: SharingStarted 전략 완전 정리 — WhileSubscribed, Eagerly, Lazily
+title: (Kotlin/코틀린) SharingStarted 전략 완전 정리 — WhileSubscribed, Eagerly, Lazily
 tags: [ Kotlin ]
 style: fill
 color: dark
