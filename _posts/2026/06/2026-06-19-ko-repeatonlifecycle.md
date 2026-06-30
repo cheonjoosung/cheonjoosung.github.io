@@ -1,5 +1,5 @@
 ---
-title: repeatOnLifecycle vs launchWhenStarted 완전 비교
+title: (Kotlin/코틀린) repeatOnLifecycle vs launchWhenStarted 완전 비교
 tags: [ Kotlin, Android ]
 style: fill
 color: dark
