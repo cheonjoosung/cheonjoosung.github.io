@@ -46,11 +46,11 @@
 - [x] 32. Data object — object에 equals/hashCode/toString 자동 생성
 - [x] 33. Enum entries — values() 대신 entries 쓰는 이유
 - [x] 34. when 표현식 심화 — subject 변수, 조건 결합
-- [ ] 35. 꼬리 재귀 (tailrec) — 스택 오버플로우 방지
-- [ ] 36. Kotlin 커링 (Currying) 패턴
-- [ ] 37. Kotlin 함수 합성 (Function Composition)
-- [ ] 38. operator fun invoke — 객체를 함수처럼 호출
-- [ ] 39. operator fun get/set — 배열처럼 접근
+- [x] 35. 꼬리 재귀 (tailrec) — 스택 오버플로우 방지
+- [x] 36. Kotlin 커링 (Currying) 패턴
+- [x] 37. Kotlin 함수 합성 (Function Composition)
+- [x] 38. operator fun invoke — 객체를 함수처럼 호출
+- [x] 39. operator fun get/set — 배열처럼 접근
 - [ ] 40. operator fun iterator — for 루프 커스터마이징
 - [ ] 41. operator rangeTo, contains
 - [ ] 42. Kotlin 내부 클래스 — inner class vs nested class
