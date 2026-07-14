@@ -51,17 +51,17 @@
 - [x] 37. Kotlin 함수 합성 (Function Composition)
 - [x] 38. operator fun invoke — 객체를 함수처럼 호출
 - [x] 39. operator fun get/set — 배열처럼 접근
-- [ ] 40. operator fun iterator — for 루프 커스터마이징
-- [ ] 41. operator rangeTo, contains
-- [ ] 42. Kotlin 내부 클래스 — inner class vs nested class
-- [ ] 43. Kotlin 인터페이스 default method와 다중 상속 해결
-- [ ] 44. 확장함수 vs 멤버함수 우선순위 규칙
-- [ ] 45. Nullable receiver 확장함수
-- [ ] 46. Kotlin null 처리 전략 — requireNotNull, checkNotNull, error
-- [ ] 47. preconditions — require, check, assert 차이
-- [ ] 48. Kotlin 비트 연산자 — and, or, xor, shl, shr
-- [ ] 49. Kotlin 수 체계 — Int, Long, UInt, ULong 범위와 변환
-- [ ] 50. Kotlin 문자열 포매팅 — format, padStart, padEnd
+- [x] 40. operator fun iterator — for 루프 커스터마이징
+- [x] 41. operator rangeTo, contains
+- [x] 42. Kotlin 내부 클래스 — inner class vs nested class
+- [x] 43. Kotlin 인터페이스 default method와 다중 상속 해결
+- [x] 44. 확장함수 vs 멤버함수 우선순위 규칙
+- [x] 45. Nullable receiver 확장함수
+- [x] 46. Kotlin null 처리 전략 — requireNotNull, checkNotNull, error
+- [x] 47. preconditions — require, check, assert 차이
+- [x] 48. Kotlin 비트 연산자 — and, or, xor, shl, shr
+- [x] 49. Kotlin 수 체계 — Int, Long, UInt, ULong 범위와 변환
+- [x] 50. Kotlin 문자열 포매팅 — format, padStart, padEnd
 
 ### 위임 / 직렬화 / 상호운용 (15개)
 
