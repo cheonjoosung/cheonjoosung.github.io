@@ -65,16 +65,16 @@
 
 ### 위임 / 직렬화 / 상호운용 (15개)
 
-- [ ] 51. Kotlin 위임 패턴 — by keyword로 interface delegation
-- [ ] 52. 커스텀 프로퍼티 델리게이트 만들기
-- [ ] 53. ObservableProperty / VetoableProperty
-- [ ] 54. Map delegation — Map에서 프로퍼티 읽기
-- [ ] 55. Kotlin 직렬화 — kotlinx.serialization 기초
-- [ ] 56. kotlinx.serialization 심화 — @SerialName, Polymorphism
-- [ ] 57. Gson vs Moshi vs kotlinx.serialization 완전 비교
-- [ ] 58. Kotlin Annotation 만들기 — @interface, RetentionPolicy
-- [ ] 59. Kotlin Reflection — KClass, KProperty, KFunction
-- [ ] 60. Java 상호운용 — @JvmStatic, @JvmField, @JvmOverloads
+- [x] 51. Kotlin 위임 패턴 — by keyword로 interface delegation
+- [x] 52. 커스텀 프로퍼티 델리게이트 만들기
+- [x] 53. ObservableProperty / VetoableProperty
+- [x] 54. Map delegation — Map에서 프로퍼티 읽기
+- [x] 55. Kotlin 직렬화 — kotlinx.serialization 기초
+- [x] 56. kotlinx.serialization 심화 — @SerialName, Polymorphism
+- [x] 57. Gson vs Moshi vs kotlinx.serialization 완전 비교
+- [x] 58. Kotlin Annotation 만들기 — @interface, RetentionPolicy
+- [x] 59. Kotlin Reflection — KClass, KProperty, KFunction
+- [x] 60. Java 상호운용 — @JvmStatic, @JvmField, @JvmOverloads
 - [ ] 61. @JvmName, @JvmSuppressWildcards 활용법
 - [ ] 62. Kotlin 파일 입출력 — readText, writeText, forEachLine
 - [ ] 63. Kotlin Script (.kts) 활용
