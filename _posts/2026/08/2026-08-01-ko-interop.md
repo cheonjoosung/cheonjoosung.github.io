@@ -1,9 +1,9 @@
 ---
-title: (Kotlin/코틀린) Java 상호운용 — @JvmStatic, @JvmField, @JvmOverloads
+title: (Kotlin/코틀린) Java 상호운용 — JvmStatic, JvmField, JvmOverloads
 tags: [ Kotlin ]
 style: fill
 color: dark
-description: Kotlin 코드를 Java에서 자연스럽게 호출할 수 있도록 하는 @JvmStatic, @JvmField, @JvmOverloads 어노테이션과 Java 상호운용 핵심 규칙을 정리합니다.
+description: Kotlin 코드를 Java에서 자연스럽게 호출할 수 있도록 하는 JvmStatic, JvmField, JvmOverloads 어노테이션과 Java 상호운용 핵심 규칙을 정리합니다.
 ---
 
 ---
