@@ -75,9 +75,9 @@
 - [x] 58. Kotlin Annotation 만들기 — @interface, RetentionPolicy
 - [x] 59. Kotlin Reflection — KClass, KProperty, KFunction
 - [x] 60. Java 상호운용 — @JvmStatic, @JvmField, @JvmOverloads
-- [ ] 61. @JvmName, @JvmSuppressWildcards 활용법
-- [ ] 62. Kotlin 파일 입출력 — readText, writeText, forEachLine
-- [ ] 63. Kotlin Script (.kts) 활용
+- [x] 61. @JvmName, @JvmSuppressWildcards 활용법
+- [x] 62. Kotlin 파일 입출력 — readText, writeText, forEachLine
+- [x] 63. Kotlin Script (.kts) 활용
 - [ ] 64. Kotlin Gradle DSL 기초
 - [ ] 65. Kotlin 2.0 주요 변경사항 — K2 컴파일러
 
