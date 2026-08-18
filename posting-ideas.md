@@ -87,12 +87,12 @@
 - [x] 67. fold vs reduce vs scan 차이
 - [x] 68. flatMap vs flatten 비교
 - [x] 69. windowed, chunked, zipWithNext
-- [ ] 70. buildList, buildMap, buildSet
-- [ ] 71. takeIf, takeUnless 실전 패턴
-- [ ] 72. Comparable & Comparator 구현
-- [ ] 73. 추상 클래스 vs 인터페이스 심화 비교
-- [ ] 74. Kotlin 메모이제이션 패턴
-- [ ] 75. Kotlin object expression (익명 객체) vs lambda 비교
+- [x] 70. buildList, buildMap, buildSet
+- [x] 71. takeIf, takeUnless 실전 패턴
+- [x] 72. Comparable & Comparator 구현
+- [x] 73. 추상 클래스 vs 인터페이스 심화 비교
+- [x] 74. Kotlin 메모이제이션 패턴
+- [x] 75. Kotlin object expression (익명 객체) vs lambda 비교
 - [ ] 76. 함수 타입과 함수 리터럴 완전 정리
 - [ ] 77. 고차 함수 실전 패턴 — 전략 패턴 대체
 - [ ] 78. Kotlin Arrow 라이브러리 기초 — Either, Option
