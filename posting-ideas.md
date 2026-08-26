@@ -93,11 +93,11 @@
 - [x] 73. 추상 클래스 vs 인터페이스 심화 비교
 - [x] 74. Kotlin 메모이제이션 패턴
 - [x] 75. Kotlin object expression (익명 객체) vs lambda 비교
-- [ ] 76. 함수 타입과 함수 리터럴 완전 정리
-- [ ] 77. 고차 함수 실전 패턴 — 전략 패턴 대체
-- [ ] 78. Kotlin Arrow 라이브러리 기초 — Either, Option
-- [ ] 79. Kotlin 접근 제어자 — internal 모듈 범위 활용
-- [ ] 80. 패키지 레벨 함수 vs 싱글턴 object 선택 기준
+- [x] 76. 함수 타입과 함수 리터럴 완전 정리
+- [x] 77. 고차 함수 실전 패턴 — 전략 패턴 대체
+- [x] 78. Kotlin Arrow 라이브러리 기초 — Either, Option
+- [x] 79. Kotlin 접근 제어자 — internal 모듈 범위 활용
+- [x] 80. 패키지 레벨 함수 vs 싱글턴 object 선택 기준
 
 ### 테스트 / 코드 품질 (10개)
 
