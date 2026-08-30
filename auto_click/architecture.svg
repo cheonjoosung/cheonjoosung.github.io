@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 700" role="img" aria-label="AutoClick module and runtime flow">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 10 5 L 0 8.8 Z" fill="#1F5C58"/>
+    </marker>
+    <marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 10 5 L 0 8.8 Z" fill="#7A8B88"/>
+    </marker>
+    <filter id="card" x="-2%" y="-2%" width="104%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#0F4C4A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="980" height="700" rx="16" fill="#F6F8F7"/>
+
+  <text x="36" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="20" font-weight="700" fill="#143834">AutoClick 모듈 · 흐름</text>
+  <text x="36" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#5E6F6C">컴파일 의존은 안쪽으로만 · 실행은 화면에서 제스처 주입까지</text>
+
+  <text x="36" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="700" fill="#1F5C58" letter-spacing="0.6">1  모듈 의존</text>
+
+  <rect x="36" y="112" width="200" height="118" rx="12" fill="#0F4C4A" filter="url(#card)"/>
+  <text x="136" y="142" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#F5C518">:app</text>
+  <text x="136" y="164" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" fill="#E8F2F0">화면 · Overlay · Service</text>
+  <text x="136" y="184" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" fill="#C5D9D5">ViewModel · Controller</text>
+  <text x="136" y="204" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" fill="#C5D9D5">Hilt · Navigation</text>
+
+  <rect x="36" y="248" width="200" height="78" rx="12" fill="#fff" stroke="#1F5C58" stroke-width="1.5" filter="url(#card)"/>
+  <text x="136" y="276" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1F5C58">:core-ui</text>
+  <text x="136" y="298" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" fill="#4A5F5C">Theme · LayoutType</text>
+
+  <rect x="390" y="128" width="220" height="176" rx="12" fill="#fff" stroke="#F5C518" stroke-width="2.5" filter="url(#card)"/>
+  <text x="500" y="158" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#143834">:domain</text>
+  <text x="500" y="180" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#B08900">순수 Kotlin · Android SDK 없음</text>
+  <text x="500" y="208" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#2A4A47">ClickScript · EngineState</text>
+  <text x="500" y="230" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#2A4A47">UseCase</text>
+  <text x="500" y="252" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#2A4A47">AutoClickEngine (I/F)</text>
+  <text x="500" y="274" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#2A4A47">Repository (I/F)</text>
+
+  <rect x="744" y="148" width="200" height="136" rx="12" fill="#fff" stroke="#1F5C58" stroke-width="1.5" filter="url(#card)"/>
+  <text x="844" y="180" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#1F5C58">:data</text>
+  <text x="844" y="206" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#4A5F5C">RepositoryImpl</text>
+  <text x="844" y="228" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#4A5F5C">Room · 스크립트/좌표</text>
+  <text x="844" y="250" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" fill="#4A5F5C">DataStore · 설정</text>
+
+  <line x1="236" y1="160" x2="380" y2="200" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="136" y1="230" x2="136" y2="248" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="236" y1="280" x2="390" y2="250" stroke="#1F5C58" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>
+  <line x1="744" y1="210" x2="620" y2="210" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="286" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" fill="#1F5C58">depends</text>
+  <text x="658" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" fill="#1F5C58">implements</text>
+
+  <text x="36" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="700" fill="#1F5C58" letter-spacing="0.6">2  실행 흐름</text>
+
+  <rect x="36" y="382" width="908" height="284" rx="14" fill="#fff" stroke="#D7E2E0"/>
+
+  <rect x="56" y="430" width="108" height="72" rx="10" fill="#0F4C4A"/>
+  <text x="110" y="460" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="700" fill="#fff">사용자</text>
+  <text x="110" y="480" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#D5E8E5">시작 · 마커 · 재생</text>
+
+  <rect x="196" y="418" width="150" height="96" rx="10" fill="#EAF4F2" stroke="#1F5C58" stroke-width="1.2"/>
+  <text x="271" y="442" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#1F5C58">:app</text>
+  <text x="271" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="700" fill="#143834">화면 / 제어바</text>
+  <text x="271" y="484" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#4A5F5C">ViewModel · Overlay</text>
+  <text x="271" y="500" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#4A5F5C">UiState / Effect</text>
+
+  <rect x="378" y="418" width="150" height="96" rx="10" fill="#FFF8E1" stroke="#E0B000" stroke-width="1.4"/>
+  <text x="453" y="442" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#B08900">:domain</text>
+  <text x="453" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="700" fill="#143834">UseCase / Engine</text>
+  <text x="453" y="484" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#6A5A10">저장 · 불러오기</text>
+  <text x="453" y="500" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#6A5A10">play / pause / stop</text>
+
+  <rect x="560" y="406" width="168" height="72" rx="10" fill="#EAF4F2" stroke="#1F5C58" stroke-width="1.2"/>
+  <text x="644" y="428" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#1F5C58">:data</text>
+  <text x="644" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="700" fill="#143834">Room / DataStore</text>
+  <text x="644" y="468" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#4A5F5C">스크립트 · 설정 영속</text>
+
+  <rect x="560" y="494" width="168" height="72" rx="10" fill="#0F4C4A"/>
+  <text x="644" y="516" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#F5C518">:app</text>
+  <text x="644" y="540" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="700" fill="#fff">Controller</text>
+  <text x="644" y="556" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" fill="#C5D9D5">GestureDispatcher</text>
+
+  <rect x="760" y="430" width="162" height="96" rx="10" fill="#0F4C4A"/>
+  <circle cx="792" cy="456" r="7" fill="#F5C518"/>
+  <text x="804" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="700" fill="#fff">지정 좌표 탭</text>
+  <text x="841" y="500" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#C5D9D5">AccessibilityService</text>
+  <text x="841" y="516" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10.5" fill="#F5C518">dispatchGesture</text>
+
+  <line x1="164" y1="466" x2="196" y2="466" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="346" y1="466" x2="378" y2="466" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="528" y1="444" x2="560" y2="438" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="528" y1="488" x2="560" y2="524" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="728" y1="530" x2="760" y2="490" stroke="#1F5C58" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="534" y="422" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10" fill="#5E6F6C">저장</text>
+  <text x="518" y="548" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10" fill="#5E6F6C">재생</text>
+
+  <text x="56" y="592" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" fill="#4A5F5C">OverlayForegroundService가 제어바를 띄우고, 재생 중에는 FLAG_NOT_TOUCHABLE로 자기 UI를 누르지 않는다.</text>
+  <text x="56" y="612" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" fill="#4A5F5C">화면 내용은 읽지 않는다. 정지: 홈 · 제어바 · 알림 · 볼륨↓ 길게.</text>
+
+  <rect x="700" y="640" width="12" height="12" rx="2" fill="#0F4C4A"/>
+  <text x="718" y="650" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#4A5F5C">:app / 시스템</text>
+  <rect x="820" y="640" width="12" height="12" rx="2" fill="#FFF8E1" stroke="#E0B000"/>
+  <text x="838" y="650" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" fill="#4A5F5C">:domain</text>
+</svg>
