@@ -114,16 +114,16 @@
 
 ### 행동 패턴 (10개)
 
-- [ ] 91. 행동 패턴 — 옵저버 패턴 (Observer)
-- [ ] 92. 행동 패턴 — 전략 패턴 (Strategy)
-- [ ] 93. 행동 패턴 — 커맨드 패턴 (Command)
-- [ ] 94. 행동 패턴 — 템플릿 메서드 패턴 (Template Method)
-- [ ] 95. 행동 패턴 — 책임 연쇄 패턴 (Chain of Responsibility)
-- [ ] 96. 행동 패턴 — 상태 패턴 (State)
-- [ ] 97. 행동 패턴 — 이터레이터 패턴 (Iterator)
-- [ ] 98. 행동 패턴 — 중재자 패턴 (Mediator)
-- [ ] 99. 행동 패턴 — 방문자 패턴 (Visitor)
-- [ ] 100. 행동 패턴 — 메멘토 패턴 (Memento)
+- [x] 91. 행동 패턴 — 옵저버 패턴 (Observer)
+- [x] 92. 행동 패턴 — 전략 패턴 (Strategy)
+- [x] 93. 행동 패턴 — 커맨드 패턴 (Command)
+- [x] 94. 행동 패턴 — 템플릿 메서드 패턴 (Template Method)
+- [x] 95. 행동 패턴 — 책임 연쇄 패턴 (Chain of Responsibility)
+- [x] 96. 행동 패턴 — 상태 패턴 (State)
+- [x] 97. 행동 패턴 — 이터레이터 패턴 (Iterator)
+- [x] 98. 행동 패턴 — 중재자 패턴 (Mediator)
+- [x] 99. 행동 패턴 — 방문자 패턴 (Visitor)
+- [x] 100. 행동 패턴 — 메멘토 패턴 (Memento)
 
 ---
 
