@@ -131,11 +131,11 @@
 
 ### Jetpack Compose (15개)
 
-- [ ] 1. Jetpack Compose 기초 — Composable, State, @Preview
-- [ ] 2. Compose 상태 관리 — remember, mutableStateOf, State Hoisting
-- [ ] 3. Compose LazyColumn / LazyGrid — RecyclerView 대체
-- [ ] 4. Compose Navigation — NavGraph, NavController
-- [ ] 5. Compose Animation — AnimatedVisibility, animateDpAsState
+- [x] 1. Jetpack Compose 기초 — Composable, State, @Preview
+- [x] 2. Compose 상태 관리 — remember, mutableStateOf, State Hoisting
+- [x] 3. Compose LazyColumn / LazyGrid — RecyclerView 대체
+- [x] 4. Compose Navigation — NavGraph, NavController
+- [x] 5. Compose Animation — AnimatedVisibility, animateDpAsState
 - [ ] 6. Compose Theme — MaterialTheme, colors, typography
 - [ ] 7. Compose Custom Layout — Layout, SubcomposeLayout
 - [ ] 8. Compose ViewModel 연동 + StateFlow
