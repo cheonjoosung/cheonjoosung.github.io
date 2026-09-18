@@ -136,11 +136,11 @@
 - [x] 3. Compose LazyColumn / LazyGrid — RecyclerView 대체
 - [x] 4. Compose Navigation — NavGraph, NavController
 - [x] 5. Compose Animation — AnimatedVisibility, animateDpAsState
-- [ ] 6. Compose Theme — MaterialTheme, colors, typography
-- [ ] 7. Compose Custom Layout — Layout, SubcomposeLayout
-- [ ] 8. Compose ViewModel 연동 + StateFlow
-- [ ] 9. Compose Side Effect — LaunchedEffect, SideEffect, DisposableEffect
-- [ ] 10. Compose UI 테스트 — ComposeTestRule
+- [x] 6. Compose Theme — MaterialTheme, colors, typography
+- [x] 7. Compose Custom Layout — Layout, SubcomposeLayout
+- [x] 8. Compose ViewModel 연동 + StateFlow
+- [x] 9. Compose Side Effect — LaunchedEffect, SideEffect, DisposableEffect
+- [x] 10. Compose UI 테스트 — ComposeTestRule
 - [ ] 11. Compose vs XML View 비교 — 언제 무엇을 선택할까
 - [ ] 12. Compose Modifier 완전 정리
 - [ ] 13. Compose 성능 최적화 — remember, derivedStateOf, key
