@@ -101,11 +101,11 @@
 
 ### 테스트 / 코드 품질 (10개)
 
-- [ ] 81. Coroutines 테스트 — TestCoroutineDispatcher, runTest
-- [ ] 82. MockK 기초 — mock, every, verify
-- [ ] 83. MockK 심화 — spy, slot, captureArgument
-- [ ] 84. Flow 테스트 — Turbine 라이브러리
-- [ ] 85. Kotlin 단위 테스트 — JUnit5 + Kotlin
+- [x] 81. Coroutines 테스트 — TestCoroutineDispatcher, runTest
+- [x] 82. MockK 기초 — mock, every, verify
+- [x] 83. MockK 심화 — spy, slot, captureArgument
+- [x] 84. Flow 테스트 — Turbine 라이브러리
+- [x] 85. Kotlin 단위 테스트 — JUnit5 + Kotlin
 - [ ] 86. TDD 실전 — Kotlin으로 레드-그린-리팩터
 - [ ] 87. detekt 정적 분석 설정
 - [ ] 88. ktlint 코드 스타일 설정
