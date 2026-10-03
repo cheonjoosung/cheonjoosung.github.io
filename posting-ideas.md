@@ -149,14 +149,14 @@
 
 ### Hilt 의존성 주입 (8개)
 
-- [ ] 16. Hilt 의존성 주입 기초 — @HiltAndroidApp, @Inject
-- [ ] 17. Hilt + ViewModel — @HiltViewModel 완전 정리
-- [ ] 18. Hilt Module — @Provides vs @Binds 차이
-- [ ] 19. Hilt Scope — Singleton, ActivityScoped, ViewModelScoped
-- [ ] 20. Hilt + Room 연동
-- [ ] 21. Hilt + Retrofit 연동
-- [ ] 22. Hilt Testing — @HiltAndroidTest, @TestInstallIn
-- [ ] 23. Hilt vs Koin vs Dagger2 비교
+- [x] 16. Hilt 의존성 주입 기초 — @HiltAndroidApp, @Inject
+- [x] 17. Hilt + ViewModel — @HiltViewModel 완전 정리
+- [x] 18. Hilt Module — @Provides vs @Binds 차이
+- [x] 19. Hilt Scope — Singleton, ActivityScoped, ViewModelScoped
+- [x] 20. Hilt + Room 연동
+- [x] 21. Hilt + Retrofit 연동
+- [x] 22. Hilt Testing — @HiltAndroidTest, @TestInstallIn
+- [x] 23. Hilt vs Koin vs Dagger2 비교
 
 ### Navigation Component (5개)
 
