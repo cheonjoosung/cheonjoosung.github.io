@@ -160,11 +160,11 @@
 
 ### Navigation Component (5개)
 
-- [ ] 24. Navigation Component 기초 — NavGraph, NavController
-- [ ] 25. Navigation Component — Safe Args 타입 안전 전달
-- [ ] 26. Navigation Component — Bottom Navigation 연동
-- [ ] 27. Navigation Component — Deep Link 처리
-- [ ] 28. Navigation Component — 백스택 관리 전략
+- [x] 24. Navigation Component 기초 — NavGraph, NavController
+- [x] 25. Navigation Component — Safe Args 타입 안전 전달
+- [x] 26. Navigation Component — Bottom Navigation 연동
+- [x] 27. Navigation Component — Deep Link 처리
+- [x] 28. Navigation Component — 백스택 관리 전략
 
 ### Jetpack Paging (3개)
 
