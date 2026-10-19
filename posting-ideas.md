@@ -168,9 +168,9 @@
 
 ### Jetpack Paging (3개)
 
-- [ ] 29. Paging3 기초 — PagingSource, Pager, PagingData
-- [ ] 30. Paging3 + Retrofit — 무한 스크롤 구현
-- [ ] 31. Paging3 + Room — 오프라인 캐시 전략
+- [x] 29. Paging3 기초 — PagingSource, Pager, PagingData
+- [x] 30. Paging3 + Retrofit — 무한 스크롤 구현
+- [x] 31. Paging3 + Room — 오프라인 캐시 전략
 
 ### Room 심화 (6개)
 
