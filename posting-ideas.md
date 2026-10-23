@@ -174,12 +174,12 @@
 
 ### Room 심화 (6개)
 
-- [ ] 32. Room Migration 전략 — 안전한 스키마 변경
-- [ ] 33. Room FTS (Full Text Search) — 전문 검색
-- [ ] 34. Room Relation — one-to-many, many-to-many
-- [ ] 35. Room TypeConverter — 커스텀 타입 저장
-- [ ] 36. Room Transaction — 원자적 DB 작업
-- [ ] 37. Room + Flow — 실시간 DB 변경 감지
+- [x] 32. Room Migration 전략 — 안전한 스키마 변경
+- [x] 33. Room FTS (Full Text Search) — 전문 검색
+- [x] 34. Room Relation — one-to-many, many-to-many
+- [x] 35. Room TypeConverter — 커스텀 타입 저장
+- [x] 36. Room Transaction — 원자적 DB 작업
+- [x] 37. Room + Flow — 실시간 DB 변경 감지
 
 ### Retrofit / 네트워크 (8개)
 
