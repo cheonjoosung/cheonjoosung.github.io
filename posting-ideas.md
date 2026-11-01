@@ -183,14 +183,14 @@
 
 ### Retrofit / 네트워크 (8개)
 
-- [ ] 38. Retrofit suspend vs Call 비교
-- [ ] 39. Retrofit 에러 응답 파싱 — ErrorBody 처리
-- [ ] 40. Retrofit 파일 업로드 — Multipart, ProgressBody
-- [ ] 41. Retrofit 동적 BaseUrl 변경 패턴
-- [ ] 42. OkHttp Cache 전략 — 오프라인 캐시
-- [ ] 43. OkHttp SSL Pinning 구현
-- [ ] 44. Retrofit + Kotlin Sealed class 에러 처리 패턴
-- [ ] 45. Retrofit + Flow 연동 패턴
+- [x] 38. Retrofit suspend vs Call 비교
+- [x] 39. Retrofit 에러 응답 파싱 — ErrorBody 처리
+- [x] 40. Retrofit 파일 업로드 — Multipart, ProgressBody
+- [x] 41. Retrofit 동적 BaseUrl 변경 패턴
+- [x] 42. OkHttp Cache 전략 — 오프라인 캐시
+- [x] 43. OkHttp SSL Pinning 구현
+- [x] 44. Retrofit + Kotlin Sealed class 에러 처리 패턴
+- [x] 45. Retrofit + Flow 연동 패턴
 
 ### UI / 커스텀 뷰 (12개)
 
