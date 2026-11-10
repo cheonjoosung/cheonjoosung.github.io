@@ -194,18 +194,18 @@
 
 ### UI / 커스텀 뷰 (12개)
 
-- [ ] 46. CustomView 만들기 — onDraw, onMeasure, onLayout
-- [ ] 47. Canvas 그리기 — Path, Paint, Bitmap 조작
-- [ ] 48. Android 애니메이션 — ObjectAnimator, ValueAnimator
-- [ ] 49. Android Transition API — 화면 전환 애니메이션
-- [ ] 50. Shared Element Transition — 자연스러운 화면 이동
-- [ ] 51. MotionLayout 기초 — ConstraintSet 애니메이션
-- [ ] 52. ConstraintLayout 심화 — Barrier, Chain, Group
-- [ ] 53. RecyclerView ItemDecoration 커스터마이징
-- [ ] 54. RecyclerView ItemAnimator 커스텀
-- [ ] 55. RecyclerView SwipeToDismiss — ItemTouchHelper
-- [ ] 56. RecyclerView Drag & Drop — ItemTouchHelper
-- [ ] 57. GestureDetector — 스와이프, 롱프레스, 더블탭 감지
+- [x] 46. CustomView 만들기 — onDraw, onMeasure, onLayout
+- [x] 47. Canvas 그리기 — Path, Paint, Bitmap 조작
+- [x] 48. Android 애니메이션 — ObjectAnimator, ValueAnimator
+- [x] 49. Android Transition API — 화면 전환 애니메이션
+- [x] 50. Shared Element Transition — 자연스러운 화면 이동
+- [x] 51. MotionLayout 기초 — ConstraintSet 애니메이션
+- [x] 52. ConstraintLayout 심화 — Barrier, Chain, Group
+- [x] 53. RecyclerView ItemDecoration 커스터마이징
+- [x] 54. RecyclerView ItemAnimator 커스텀
+- [x] 55. RecyclerView SwipeToDismiss — ItemTouchHelper
+- [x] 56. RecyclerView Drag & Drop — ItemTouchHelper
+- [x] 57. GestureDetector — 스와이프, 롱프레스, 더블탭 감지
 
 ### 백그라운드 / 시스템 (10개)
 
