@@ -209,16 +209,16 @@
 
 ### 백그라운드 / 시스템 (10개)
 
-- [ ] 58. Service vs IntentService vs JobIntentService 비교
-- [ ] 59. Foreground Service 구현 — 알림과 함께
-- [ ] 60. AlarmManager vs WorkManager 선택 기준
-- [ ] 61. BroadcastReceiver 종류와 사용법 — 정적 vs 동적
-- [ ] 62. ContentProvider 기초 — 앱 간 데이터 공유
-- [ ] 63. FileProvider — 외부 앱에 파일 URI 공유
-- [ ] 64. MediaStore — 사진/동영상 접근 (Scoped Storage)
-- [ ] 65. Android 12+ 알림 채널 설정 및 권한 요청
-- [ ] 66. CameraX 라이브러리 — 사진 촬영, 미리보기
-- [ ] 67. App Widget 만들기 — RemoteViews
+- [x] 58. Service vs IntentService vs JobIntentService 비교
+- [x] 59. Foreground Service 구현 — 알림과 함께
+- [x] 60. AlarmManager vs WorkManager 선택 기준
+- [x] 61. BroadcastReceiver 종류와 사용법 — 정적 vs 동적
+- [x] 62. ContentProvider 기초 — 앱 간 데이터 공유
+- [x] 63. FileProvider — 외부 앱에 파일 URI 공유
+- [x] 64. MediaStore — 사진/동영상 접근 (Scoped Storage)
+- [x] 65. Android 12+ 알림 채널 설정 및 권한 요청
+- [x] 66. CameraX 라이브러리 — 사진 촬영, 미리보기
+- [x] 67. App Widget 만들기 — RemoteViews
 
 ### Firebase / 서드파티 (8개)
 
